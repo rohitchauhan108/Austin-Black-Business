@@ -34,8 +34,7 @@ export default function HomePage() {
     { label: 'Healthcare Pioneers', query: 'Healthcare' },
     { label: 'Capital & Investment', query: 'Business' },
     { label: 'Legal Counsel', query: 'Legal' },
-    { label: 'East Austin Heritage', query: 'Community' },
-    { label: 'Business Directory', path: '/directory' }
+    { label: 'East Austin Heritage', query: 'Community' }
   ];
 
   return (

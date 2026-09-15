@@ -36,7 +36,6 @@ export default function Header() {
     { label: 'Healthcare', path: '/blog?category=Healthcare' },
     { label: 'Legal', path: '/blog?category=Legal' },
     { label: 'Community', path: '/blog?category=Community' },
-    { label: 'Business Directory', path: '/directory' },
     { label: 'About', path: '/about' },
     { label: 'Contact', path: '/contact' }
   ];

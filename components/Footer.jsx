@@ -75,14 +75,6 @@ export default function Footer() {
                 </li>
                 <li>
                   <button
-                    onClick={() => navigate('/directory')}
-                    className="hover:text-[#FF4D4D] text-white font-semibold transition-colors cursor-pointer"
-                  >
-                    Black Business Directory
-                  </button>
-                </li>
-                <li>
-                  <button
                     onClick={() => navigate('/blog')}
                     className="hover:text-[#FF4D4D] transition-colors cursor-pointer"
                   >
@@ -99,13 +91,6 @@ export default function Footer() {
           <p>© {new Date().getFullYear()} Austin Black Business Journal & Made Media Group. All rights reserved.</p>
           <div className="flex items-center gap-4 text-[11px]">
             <span>Austin, Texas</span>
-            <span>•</span>
-            <button
-              onClick={() => navigate('/directory')}
-              className="hover:text-white transition-colors cursor-pointer"
-            >
-              Directory
-            </button>
             <span>•</span>
             <button
               onClick={() => navigate('/blog')}
