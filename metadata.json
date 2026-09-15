@@ -1,0 +1,6 @@
+{
+  "name": "Austin Black Business Journal & Community News Magazine",
+  "description": "The premier digital magazine celebrating African American excellence, Black-owned businesses, healthcare pioneers, legal champions, and tech innovators across Austin and Central Texas.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

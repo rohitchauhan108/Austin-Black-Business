@@ -1,0 +1,1031 @@
+// Master Editorial Database for Austin Black Business Journal & Community News Magazine (ABBJ)
+// Published by Made Media Group | Anita C. Roberts, Publisher & Editor-in-Chief
+
+export const CATEGORIES = [
+  'All',
+  'Business',
+  'Technology',
+  'Healthcare',
+  'Legal',
+  'Leadership',
+  'Community'
+];
+
+export const DIRECTORY_CATEGORIES = [
+  'All',
+  'Dining & Culinary',
+  'Professional & Legal',
+  'Health & Wellness',
+  'Technology & Creative',
+  'Real Estate & Construction'
+];
+
+export const BUSINESS_DIRECTORY = [
+  {
+    id: 'biz-1',
+    name: "Sam's BBQ",
+    category: 'Dining & Culinary',
+    owner: 'Brian Mays',
+    address: '2000 E 12th St, Austin, TX 78702',
+    neighborhood: 'Historic East Austin',
+    phone: '(512) 478-0370',
+    description: 'Iconic East Austin smokehouse serving authentic Texas brisket, ribs, and mutton since 1957. A historic cornerstone of community gathering.',
+    imageUrl: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80',
+    tags: ['Legendary BBQ', 'Historic East Austin', 'Soul Food']
+  },
+  {
+    id: 'biz-2',
+    name: 'Metayer Law PLLC',
+    category: 'Professional & Legal',
+    owner: 'Rudy Metayer, Esq.',
+    address: '100 Congress Ave, Suite 2000, Austin, TX 78701',
+    neighborhood: 'Downtown Austin',
+    phone: '(512) 582-7400',
+    description: 'Premier civil litigation, employment law, and corporate counseling firm recognized by the Austin Black Business Journal for exceptional advocacy.',
+    imageUrl: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80',
+    tags: ['Litigation', 'Corporate Counsel', 'Civil Rights']
+  },
+  {
+    id: 'biz-3',
+    name: 'Barton Springs Pediatric & Family Medicine',
+    category: 'Health & Wellness',
+    owner: 'Dr. Anna "Liz" E. Holliman & Associates',
+    address: '1600 W 38th St, Austin, TX 78731',
+    neighborhood: 'Central Austin',
+    phone: '(512) 454-4545',
+    description: 'Comprehensive family healthcare, pediatric medicine, and maternal wellness practice recognized as Doctor of the Year honoree.',
+    imageUrl: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80',
+    tags: ['Pediatrics', 'Family Medicine', 'Preventative Care']
+  },
+  {
+    id: 'biz-4',
+    name: 'Silicon Hills Cloud Solutions',
+    category: 'Technology & Creative',
+    owner: 'Marcus Vance',
+    address: '111 Congress Ave, Austin, TX 78701',
+    neighborhood: 'Downtown Tech District',
+    phone: '(512) 391-9200',
+    description: 'Enterprise cloud migration, AI systems integration, and cybersecurity architectures serving Central Texas enterprises.',
+    imageUrl: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80',
+    tags: ['Cloud Computing', 'Enterprise AI', 'Cybersecurity']
+  },
+  {
+    id: 'biz-5',
+    name: 'Bird Bird Biscuit',
+    category: 'Dining & Culinary',
+    owner: 'Brian Batch & Ryan McElroy',
+    address: '2701 Manor Rd, Austin, TX 78722',
+    neighborhood: 'Manor Road Corridor',
+    phone: '(512) 761-4922',
+    description: 'Nationally acclaimed artisanal scratch biscuits and signature buttermilk fried chicken sandwiches, celebrating craftsmanship in comfort dining.',
+    imageUrl: 'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=800&q=80',
+    tags: ['Scratch Biscuits', 'Award-Winning', 'Comfort Cuisine']
+  },
+  {
+    id: 'biz-6',
+    name: 'East Austin Heritage Development Group',
+    category: 'Real Estate & Construction',
+    owner: 'Tanya Washington-Cole',
+    address: '1100 E 11th St, Austin, TX 78702',
+    neighborhood: 'East Austin',
+    phone: '(512) 904-8822',
+    description: 'Sustainable commercial and residential development focused on cultural preservation, affordable commercial leases, and minority subcontracting.',
+    imageUrl: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
+    tags: ['Commercial Real Estate', 'Cultural Preservation', 'Green Building']
+  },
+  {
+    id: 'biz-7',
+    name: 'Austin Oasis Therapeutic Spa & Wellness',
+    category: 'Health & Wellness',
+    owner: 'Camille Dubois, LMT',
+    address: '3400 E 7th St, Austin, TX 78702',
+    neighborhood: 'East Cesar Chavez',
+    phone: '(512) 419-7200',
+    description: 'Holistic stress management, somatic bodywork, and neuromuscular massage therapy helping executives and community workers recharge.',
+    imageUrl: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80',
+    tags: ['Somatic Therapy', 'Holistic Health', 'Aromatherapy']
+  },
+  {
+    id: 'biz-8',
+    name: 'Made Media Production & Digital Labs',
+    category: 'Technology & Creative',
+    owner: 'Anita C. Roberts',
+    address: '2201 E 51st St, Austin, TX 78723',
+    neighborhood: 'Mueller District',
+    phone: '(512) 861-5500',
+    description: 'Full-service digital publishing, film production, podcasting studios, and youth media mentorship empowering minority creators.',
+    imageUrl: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=800&q=80',
+    tags: ['Film Production', 'Podcasting', 'Youth Mentorship']
+  }
+];
+
+export const ARTICLES = [
+  // 1. LEAD COVER STORY (Technology & Leadership)
+  {
+    id: 'art-1',
+    slug: 'austin-black-tech-leaders-silicon-hills-innovation',
+    title: "Black Technologists in Silicon Hills: Architecting Austin's Next Era of AI and Enterprise Innovation",
+    subtitle: "From enterprise cloud infrastructure to human-centered AI, Central Texas Black engineers and venture founders are commanding key seats at the innovation table.",
+    category: 'Technology',
+    isHero: true,
+    isFeatured: true,
+    isTrending: true,
+    views: 14850,
+    readTime: '6 min read',
+    date: 'September 14, 2026',
+    author: {
+      name: 'Marcus Vance, M.S.',
+      role: 'Technology Editor, ABBJ',
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80',
+      bio: 'Marcus Vance covers software systems, venture capital, and diversity in STEM across Central Texas. A former senior engineer at Dell and IBM, he mentors emerging technologists through Made Media Group.'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80',
+    imageCaption: 'Black engineering leaders and startup founders convene in downtown Austin to discuss ethical AI governance and capital access.',
+    excerpt: "Austin's emergence as the premier tech capital between the coasts is no longer an isolated corporate narrative. Today, Black founders, engineers, and product leaders are driving billion-dollar valuations and reimagining software equity.",
+    pullQuote: "We are not merely consumers of the digital economy—we are the architects defining algorithms that will govern healthcare, banking, and public civic systems for generations.",
+    pullQuoteAuthor: "Marcus Vance, Technology Editor & Enterprise Architect",
+    keyTakeaways: [
+      'Black founders in Austin raised over $140M in venture and private equity across 2025–2026.',
+      'Silicon Hills enterprises are actively expanding technical mentorship pipelines via Made Media Group.',
+      'AI ethics and algorithmic bias audits have become a primary focus for Central Texas Black technologists.',
+      'New seed accelerators on East 11th Street provide non-dilutive grant funding and executive coaching.'
+    ],
+    paragraphs: [
+      "In the gleaming conference suites overlooking Lady Bird Lake, the conversation around the future of Austin's tech economy has undergone a decisive transformation. Where diversity was once relegated to polite panel discussions at annual summits, Black technology executives in Central Texas are now wielding direct capital authority, founding enterprise AI platforms, and steering critical engineering departments at market-leading firms.",
+      "Austin's trajectory as 'Silicon Hills' was built on semiconductors, hardware innovation, and enterprise software. Yet as generative computing and quantum infrastructure accelerate, the talent leading these breakthroughs reflects a richer, more diverse spectrum of lived experiences. Through initiatives pioneered by the Austin Black Business Journal and Made Media Group, technologists who once fought for visibility are now celebrated honorees, mentors, and corporate board members.",
+      "The shift is palpable in venture creation. Austin-based startups founded by African American entrepreneurs have broken previous fundraising ceilings in enterprise SaaS, digital health, and climate infrastructure. Rather than relying solely on coastal venture capital firms that often overlook non-traditional founders, a robust local network of angel syndicates and institutional funds has emerged to anchor early-stage rounds right here in Travis County.",
+      "Furthermore, technical leadership extends beyond venture balance sheets into community resilience. Through the Creative Mentorship Program and regional STEM hackathons, senior Black engineers are actively training the next generation of students from Huston-Tillotson University and Austin Independent School District, ensuring that the wealth generated by the Austin tech boom recirculates into East Austin neighborhoods.",
+      "As we look ahead, the consensus among Central Texas technologists is unmistakable: equity is not an administrative checkbox; it is the fundamental prerequisite for durable innovation."
+    ],
+    tags: ['Silicon Hills', 'Blacks In Tech', 'AI Innovation', 'STEM Mentorship', 'Austin Startups']
+  },
+
+  // 2. LEAD HERO SECONDARY 1 (Healthcare)
+  {
+    id: 'art-2',
+    slug: 'central-texas-black-doctors-of-the-year-healthcare-equity',
+    title: "Honoring Central Texas Black Doctors of the Year: Champions of Maternal Health and Preventative Medicine",
+    subtitle: "Austin Regional Clinic physicians Dr. Anna 'Liz' Holliman, Dr. Judith Enders, and Dr. Duriel Hardy receive top honors for closing racial disparities in patient outcomes.",
+    category: 'Healthcare',
+    isHero: true,
+    isFeatured: true,
+    isTrending: true,
+    views: 12940,
+    readTime: '5 min read',
+    date: 'September 13, 2026',
+    author: {
+      name: 'Dr. Camille Dubois, M.D.',
+      role: 'Healthcare & Public Health Contributor',
+      avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80',
+      bio: 'Dr. Camille Dubois writes on health disparities, maternal health, and clinical leadership across Central Texas, championing equitable care models.'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=1200&q=80',
+    imageCaption: 'Physicians honored at the annual Achievements in Black Austin Gala for groundbreaking community wellness initiatives.',
+    excerpt: "At the prestigious Achievements in Black Austin Gala, the Austin Black Business Journal celebrated three pioneering physicians whose clinical dedication and empathetic care models have transformed Central Texas public health.",
+    pullQuote: "When patients see a physician who shares their cultural heritage and listens without bias, clinical trust is forged, compliance rates skyrocket, and lives are saved.",
+    pullQuoteAuthor: "Dr. Anna 'Liz' E. Holliman, 2022 Doctor of the Year",
+    keyTakeaways: [
+      'Austin Regional Clinic leaders honored for reducing maternal health disparities by over 34% in regional clinics.',
+      'The Made Media Group Community Health & Wellness Initiative expands free screenings across Del Valle and Manor.',
+      'New fellowship programs established to support Black medical residents at UT Austin Dell Medical School.',
+      'Pediatric preventative care programs focus on early childhood nutrition and respiratory health.'
+    ],
+    paragraphs: [
+      "When Dr. Anna 'Liz' E. Holliman stepped onto the stage to accept the Doctor of the Year honor at the Austin Black Business Journal Achievements in Black Austin Gala, the standing ovation reflected decades of tireless advocacy for equitable clinical medicine. Alongside Dr. Judith Whitmire Enders and pediatric specialist Dr. Shane Constable, Dr. Holliman represents the gold standard of physician leadership.",
+      "The stakes could not be higher. Texas continues to grapple with staggering racial disparities in maternal mortality and chronic disease management. African American mothers in Central Texas have historically faced disproportionate risks during childbirth, driven by systemic communication barriers and unequal diagnostic attention.",
+      "In response, these honorees have spearheaded community-centered clinics, culturally competent diagnostic protocols, and direct partnerships with local faith organizations to meet patients where they live. The results are undeniable: preventive screening rates have doubled in historically underserved ZIP codes, and maternal outcome benchmarks have significantly improved.",
+      "Through the Austin Black Business Journal's ongoing healthcare spotlight, the work of Black physicians continues to inspire new generations of pre-med students at Huston-Tillotson University and Dell Medical School, ensuring that the future of Central Texas healthcare is defined by empathy, excellence, and systemic equity."
+    ],
+    tags: ['Healthcare Champions', 'Top Doctors', 'Maternal Health', 'Dell Medical', 'Austin Regional Clinic']
+  },
+
+  // 3. LEAD HERO SECONDARY 2 (Business & Economic Development)
+  {
+    id: 'art-3',
+    slug: 'east-austin-black-owned-business-renaissance-11th-street',
+    title: "The East Austin Commercial Renaissance: Revitalizing 11th and 12th Streets as Epicenters of Black Commerce",
+    subtitle: "How visionary entrepreneurs, legacy landowners, and community developers are protecting cultural heritage while building high-margin sustainable enterprises.",
+    category: 'Business',
+    isHero: true,
+    isFeatured: true,
+    isTrending: false,
+    views: 11200,
+    readTime: '5 min read',
+    date: 'September 12, 2026',
+    author: {
+      name: 'Anita C. Roberts',
+      role: 'Publisher & Editor-in-Chief, ABBJ',
+      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80',
+      bio: 'Anita C. Roberts is a retired Army Lieutenant Colonel, author of "Achievements in Black Austin," and Executive Director of Made Media Group.'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80',
+    imageCaption: 'The historic East 11th Street corridor, where legacy institutions and new Black-owned enterprises thrive side by side.',
+    excerpt: "East Austin has always been the cultural beating heart of Black Austin. Today, legacy business owners and modern retail innovators are banding together to ensure commercial ownership remains anchored in community hands.",
+    pullQuote: "Real economic sovereignty begins with the deed. If our entrepreneurs own the land beneath their storefronts, no market cycle can displace our presence.",
+    pullQuoteAuthor: "Anita C. Roberts, Founder of Black Austin®",
+    keyTakeaways: [
+      'Over 45 Black-owned commercial storefronts now active along the East 11th and 12th Street corridors.',
+      'Community land trusts and commercial lease co-ops prevent rent gouging for legacy retail tenants.',
+      'Austin Black Chamber partnerships facilitate streamlined access to municipal contract procurement.',
+      'The Black Austin® Historical Reference Guide documents over a century of entrepreneurial resilience.'
+    ],
+    paragraphs: [
+      "Walking down East 11th Street on a Saturday morning, one experiences the vibrant juxtaposition that defines modern Austin. The aroma of slow-smoked barbecue from legacy pits mingles with artisanal espresso from newly minted cafes, while boutique creative studios showcase the work of Black painters, fashion designers, and software founders.",
+      "For decades, gentrification pressures threatened to erase the physical footprint of African American life in East Austin. In response, a coalition of legacy property owners, developers, and civic champions formed commercial equity trusts designed to retain commercial parcels in the hands of Black proprietors.",
+      "Initiatives highlighted by the Austin Black Business Journal have illuminated the economic multiplier of buying Black. When dollars circulate within community businesses, they support local hiring, fund youth sports leagues, and endow scholarships at regional historically Black colleges.",
+      "With municipal support and backing from local banking partners, the East Austin commercial renaissance demonstrates that urban revitalization does not require cultural displacement. It requires intentional capital allocation and an unwavering commitment to community heritage."
+    ],
+    tags: ['East Austin', 'Commercial Real Estate', 'Black Austin', 'Economic Parity', 'Heritage Preservation']
+  },
+
+  // 4. FEATURED STORIES GRID (4 Columns)
+  {
+    id: 'art-4',
+    slug: 'most-influential-lawyers-rudy-metayer-cheryl-powell',
+    title: "Most Influential Attorneys: Defending Civil Rights and Guiding Corporate Governance in Texas",
+    subtitle: "Austin Black Business Journal honors trailblazing legal minds including Rudy Metayer, Cheryl Powell, and Amanda Moore for landmark advocacy.",
+    category: 'Legal',
+    isHero: false,
+    isFeatured: true,
+    isTrending: true,
+    views: 9840,
+    readTime: '4 min read',
+    date: 'September 11, 2026',
+    author: {
+      name: 'Terrence Sterling, J.D.',
+      role: 'Legal Affairs Correspondent',
+      avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80',
+      bio: 'Terrence Sterling reports on jurisprudence, constitutional law, and civil rights litigation throughout Texas.'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80',
+    imageCaption: 'Rudy Metayer and Cheryl Powell, celebrated among the Most Influential Lawyers in Central Texas.',
+    excerpt: "From boardroom arbitrations to the steps of the Texas Supreme Court, Black attorneys across Austin are shaping precedent, safeguarding voting rights, and structuring historic municipal contracts.",
+    pullQuote: "The law is only as equitable as the people who sit in the courtroom. Our presence ensures that justice is never an abstract privilege.",
+    pullQuoteAuthor: "Rudy Metayer, Attorney & City Leader",
+    keyTakeaways: [
+      'Annual Austin Black Business Journal Legal Honors recognizes top litigators, corporate counsel, and judges.',
+      'Legal aid clinics established to provide pro-bono contract reviews for first-time Black business owners.',
+      'Diversity within Travis County judicial appointments has reached historic highs in 2025–2026.'
+    ],
+    paragraphs: [
+      "In a state known for rigorous courtroom battles and complex corporate litigation, the attorneys honored by the Austin Black Business Journal represent the pinnacle of legal integrity.",
+      "Rudy Metayer, recognized as one of the region's Most Influential Attorneys, has combined private sector corporate defense with tireless public service, serving on regional boards and advocating for affordable housing infrastructure.",
+      "Alongside him, veteran litigator Cheryl Powell and up-and-coming champions like Amanda Moore continue to pave pathways for minority associates within major Texas law firms, proving that excellence in jurisprudence creates lasting civic change."
+    ],
+    tags: ['Legal Honors', 'Most Influential Lawyers', 'Judicial Equity', 'Civil Rights', 'Corporate Law']
+  },
+
+  {
+    id: 'art-5',
+    slug: 'diversity-champions-leading-equity-austin-enterprises',
+    title: "Top 10 Diversity Champions: How Corporate Austin Is Moving from Statements to Measurable Impact",
+    subtitle: "C12 Chair Phyllis Snodgrass and corporate executives honored for establishing transparent supplier diversity and executive succession benches.",
+    category: 'Leadership',
+    isHero: false,
+    isFeatured: true,
+    isTrending: false,
+    views: 8750,
+    readTime: '4 min read',
+    date: 'September 10, 2026',
+    author: {
+      name: 'Kendra Washington',
+      role: 'Executive Leadership Writer',
+      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80',
+      bio: 'Kendra Washington focuses on corporate governance, executive diversity, and workplace equity metrics.'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?auto=format&fit=crop&w=800&q=80',
+    imageCaption: 'Phyllis Snodgrass and diversity leaders at the Central Texas Corporate Leadership Roundtable.',
+    excerpt: "Corporate Austin's top diversity champions are replacing vague pledges with auditable metrics: tracking minority supplier spend, board representation, and leadership promotion velocity.",
+    pullQuote: "True diversity is not measured by who enters the lobby; it is measured by who holds equity, voting shares, and operational P&L responsibility.",
+    pullQuoteAuthor: "Phyllis Snodgrass, C12 Chair & Top Diversity Champion",
+    keyTakeaways: [
+      'Austin enterprises increased spend with Black-certified suppliers by 28% year-over-year.',
+      'Mentorship programs in C-suite succession planning yield higher retention for minority executives.',
+      'The Austin Black Business Journal Diversity Honors celebrates accountability across technology, real estate, and finance.'
+    ],
+    paragraphs: [
+      "For years, corporate diversity programs were scrutinized for lack of teeth. Today in Austin, a disciplined cadre of executives is changing the narrative.",
+      "Honored by the Austin Black Business Journal as Top Diversity Champions, leaders like Phyllis Snodgrass have shown that fostering diverse talent pools leads directly to superior financial outcomes, sharper risk assessment, and stronger customer loyalty.",
+      "Through transparent reporting and rigorous performance metrics, Central Texas companies are demonstrating that inclusive leadership is a competitive advantage in a globalized marketplace."
+    ],
+    tags: ['Diversity Champions', 'C-Suite', 'Corporate Equity', 'Supplier Diversity', 'Leadership']
+  },
+
+  {
+    id: 'art-6',
+    slug: 'achievements-in-black-austin-gala-celebrating-excellence',
+    title: "Achievements in Black Austin: Inside the Premier Annual Gala Celebrating Community Impact",
+    subtitle: "The Austin Black Business Journal's flagship black-tie event convenes civic titans, innovators, philanthropists, and youth scholars.",
+    category: 'Community',
+    isHero: false,
+    isFeatured: true,
+    isTrending: true,
+    views: 9400,
+    readTime: '4 min read',
+    date: 'September 09, 2026',
+    author: {
+      name: 'Anita C. Roberts',
+      role: 'Publisher & Editor-in-Chief, ABBJ',
+      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80',
+      bio: 'Anita C. Roberts is the Founder of Black Austin® and Publisher of the Austin Black Business Journal.'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80',
+    imageCaption: 'Attendees at the annual Achievements in Black Austin Best of the Year Gala celebrating community triumphs.',
+    excerpt: "The annual Achievements in Black Austin Gala has become the undisputed social and civic highlight of Central Texas, honoring educators, entrepreneurs, physicians, and civic pioneers.",
+    pullQuote: "When we come together in this room, we are not just celebrating individual accolades—we are declaring that Black excellence is the foundational bedrock of Austin's prosperity.",
+    pullQuoteAuthor: "Anita C. Roberts, Publisher",
+    keyTakeaways: [
+      'More than 800 community leaders, elected officials, and corporate sponsors attended the gala.',
+      'Over $75,000 raised to fund Made Media Group Creative Mentorship scholarships for minority youth.',
+      'Lifetime Achievement Awards bestowed upon East Austin civil rights educators and historic business owners.'
+    ],
+    paragraphs: [
+      "Bathed in gold candlelight and vibrant orchestral arrangements, the grand ballroom filled with laughter, tears of gratitude, and thunderous applause as honorees stepped forward to receive their awards.",
+      "Produced by Made Media Group, the Achievements in Black Austin Gala is far more than a ceremony. It is an intentional act of historical preservation, documenting the individuals who are actively writing Central Texas history.",
+      "From honoring up-and-coming medical doctors to celebrating attorneys who spent decades protecting community voting rights, the gala reinforces that recognition is an act of empowerment."
+    ],
+    tags: ['Achievements In Black Austin', 'Annual Gala', 'Black Excellence', 'Philanthropy', 'Civic Pride']
+  },
+
+  {
+    id: 'art-7',
+    slug: 'made-media-group-creative-mentorship-youth-stem',
+    title: "Made Media Group Launches Next-Gen Creative Mentorship Program in Digital Media and Technology",
+    subtitle: "Empowering minority high school and collegiate scholars through hands-on broadcast journalism, film production, and cloud engineering.",
+    category: 'Community',
+    isHero: false,
+    isFeatured: true,
+    isTrending: false,
+    views: 7920,
+    readTime: '4 min read',
+    date: 'September 08, 2026',
+    author: {
+      name: 'DeMarcus Hayes',
+      role: 'Education & Community Outreach Editor',
+      avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80',
+      bio: 'DeMarcus Hayes directs youth media initiatives and writes on educational equity throughout Central Texas.'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80',
+    imageCaption: 'Made Media Group creative mentorship fellows editing documentary projects in digital production labs.',
+    excerpt: "By placing state-of-the-art cameras, podcasting rigs, and coding workstations directly into the hands of minority youth, Made Media Group is dismantling barriers to lucrative media careers.",
+    pullQuote: "If young people can see themselves behind the camera and directing the script, they will never doubt their ability to lead in any boardroom in the world.",
+    pullQuoteAuthor: "DeMarcus Hayes, Education & Outreach Director",
+    keyTakeaways: [
+      '12-week intensive mentorship covering investigative journalism, video editing, and generative media tools.',
+      'Each student matched with an active corporate mentor from Austin tech and broadcast media companies.',
+      '100% of graduating fellows secured paid internships or university scholarships in media and computer science.'
+    ],
+    paragraphs: [
+      "In a studio equipped with cinematic 6K cameras and digital audio consoles on East 51st Street, teenagers from across Austin are learning the craft of storytelling from award-winning professionals.",
+      "Made Media Group's 501(c)(3) mission—to inform, empower, and transform through mass communication and technology—finds its sharpest expression in the Creative Mentorship Program.",
+      "Students learn how to conduct rigorous interviews, edit video documentaries, and understand the mechanics of digital intellectual property, preparing them for lucrative careers in the 21st-century knowledge economy."
+    ],
+    tags: ['Made Media Group', 'Youth Mentorship', 'Digital Media', 'STEM Careers', 'Education Equity']
+  },
+
+  // 5. ADDITIONAL ARTICLES (Totaling 30 comprehensive pieces)
+  {
+    id: 'art-8',
+    slug: 'austin-black-chamber-access-to-capital-summit',
+    title: "Capital Access Summit: Austin Black Chamber Unlocks $25M in Low-Interest Lending for Local Founders",
+    subtitle: "Major financial institutions partner with community development financial institutions (CDFIs) to eliminate borrowing disparities.",
+    category: 'Business',
+    isHero: false,
+    isFeatured: false,
+    isTrending: true,
+    views: 6840,
+    readTime: '4 min read',
+    date: 'September 07, 2026',
+    author: { name: 'Anita C. Roberts', role: 'Publisher, ABBJ', avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80', bio: 'Anita C. Roberts covers economic policy and entrepreneurship.' },
+    imageUrl: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80',
+    imageCaption: 'Bank leaders and entrepreneurs signing historic community lending pledges in Austin.',
+    excerpt: "A historic coalition between the Austin Black Chamber and regional banks establishes streamlined loan underwriting for minority contractors and retail businesses.",
+    pullQuote: "Access to working capital is the oxygen that transforms a hopeful side-hustle into an intergenerational commercial empire.",
+    pullQuoteAuthor: "Anita C. Roberts, Publisher",
+    keyTakeaways: ['New revolving loan fund offers 3.5% interest rates for equipment and inventory.', 'Free financial auditing provided by certified Black CPAs.', 'More than 85 business owners approved during the first round.'],
+    paragraphs: [
+      "For generations, conventional commercial lending has presented a formidable obstacle for Black business owners lacking generational collateral.",
+      "The Capital Access Summit, convened by the Austin Black Chamber, tackled this issue head-on by pairing regional banks with flexible underwriting guidelines.",
+      "Founders across construction, tech services, and food manufacturing can now access the expansion capital required to bid on major regional contracts."
+    ],
+    tags: ['Austin Black Chamber', 'Capital Access', 'CDFI Lending', 'Small Business', 'Finance']
+  },
+
+  {
+    id: 'art-9',
+    slug: 'black-women-in-biotech-austin-cancer-research-breakthroughs',
+    title: "Pioneering Cancer Immunotherapy: Black Women Scientists Leading Trials at Austin Research Hubs",
+    subtitle: "Dr. Maya Johnson and team uncover biomarkers that improve treatment response rates in historically understudied populations.",
+    category: 'Healthcare',
+    isHero: false,
+    isFeatured: false,
+    isTrending: false,
+    views: 7300,
+    readTime: '5 min read',
+    date: 'September 06, 2026',
+    author: { name: 'Dr. Camille Dubois, M.D.', role: 'Healthcare Contributor', avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80', bio: 'Dr. Dubois covers medical discoveries and clinical equity.' },
+    imageUrl: 'https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=800&q=80',
+    imageCaption: 'Biotechnology researchers analyzing clinical oncology trial datasets in Austin laboratories.',
+    excerpt: "Austin's emerging biotechnology sector is gaining national renown thanks to cancer researchers who insist on clinical diversity at every phase of drug discovery.",
+    pullQuote: "You cannot develop precision therapeutics for humanity if your clinical trials only represent fifteen percent of humanity.",
+    pullQuoteAuthor: "Dr. Maya Johnson, Lead Principal Investigator",
+    keyTakeaways: ['Clinical trials conducted with over 40% minority patient participation.', 'Breakthrough biomarker published in the New England Journal of Medicine.', 'Austin biotech firm secures $45M Series B for clinical scale-up.'],
+    paragraphs: [
+      "In the sterile, climate-controlled labs of Austin's life sciences corridor, Dr. Maya Johnson peers through electron microscopes with a sense of urgent purpose.",
+      "Her laboratory's work on targeted immune therapies addresses a critical blind spot in American oncology: the systematic underrepresentation of African descent genomes in drug databases.",
+      "By actively recruiting diverse clinical cohorts across Central Texas, Dr. Johnson is not only advancing science—she is ensuring cures work for everyone."
+    ],
+    tags: ['Biotechnology', 'Oncology', 'Women In STEM', 'Clinical Trials', 'Austin Research']
+  },
+
+  {
+    id: 'art-10',
+    slug: 'historic-black-churches-austin-social-equity-incubators',
+    title: "Faith and Fortitude: How Austin's Historic Black Churches Serve as Anchors for Affordable Housing",
+    subtitle: "Congregations in East Austin leverage church-owned land assets to build affordable senior living communities and childcare facilities.",
+    category: 'Community',
+    isHero: false,
+    isFeatured: false,
+    isTrending: false,
+    views: 6100,
+    readTime: '4 min read',
+    date: 'September 05, 2026',
+    author: { name: 'DeMarcus Hayes', role: 'Community Outreach Editor', avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80', bio: 'DeMarcus Hayes writes on faith, housing, and social justice.' },
+    imageUrl: 'https://images.unsplash.com/photo-1548625361-195fe578ae71?auto=format&fit=crop&w=800&q=80',
+    imageCaption: 'Ebenezer Baptist Church in East Austin, an architectural and spiritual anchor since the 19th century.',
+    excerpt: "East Austin's historic congregations are transforming unused acreage into modern, affordable housing complexes, allowing legacy seniors to age in place with dignity.",
+    pullQuote: "The church was the original bank, school, and sanctuary for Black Texans. Today, it remains our greatest shield against gentrification.",
+    pullQuoteAuthor: "Pastor Raymond Vance, Community Faith Coalition",
+    keyTakeaways: ['Three historic congregations announce 240 units of senior affordable housing.', 'Community wellness clinics housed within church community centers.', 'Preservation grants awarded to protect historic brick sanctuaries.'],
+    paragraphs: [
+      "For over 140 years, sanctuaries like Ebenezer Baptist and Wesley United Methodist have stood as beacons of hope and organizing power in East Austin.",
+      "As property taxes and land valuations reached unprecedented heights, church trustees rejected lucrative purchase offers from luxury condominium developers.",
+      "Instead, through visionary faith-based land trusts, these congregations are building subsidized apartments and wellness clinics, preserving community continuity."
+    ],
+    tags: ['Historic Churches', 'Affordable Housing', 'East Austin Faith', 'Senior Living', 'Community']
+  },
+
+  {
+    id: 'art-11',
+    slug: 'austin-culinary-scene-black-chefs-redefining-fine-dining',
+    title: "Beyond the Smokehouse: Black Chefs and Restaurateurs Redefining Fine Dining in Central Texas",
+    subtitle: "From West African tasting menus to modern Creole bistro fare, Austin's Black culinary pioneers are earning national critical acclaim.",
+    category: 'Business',
+    isHero: false,
+    isFeatured: false,
+    isTrending: true,
+    views: 8900,
+    readTime: '5 min read',
+    date: 'September 04, 2026',
+    author: { name: 'Kendra Washington', role: 'Culture & Dining Writer', avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80', bio: 'Kendra Washington covers food heritage, hospitality, and dining entrepreneurs.' },
+    imageUrl: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80',
+    imageCaption: 'Executive Chef preparing a seasonal heritage grain dish in a downtown Austin culinary kitchen.',
+    excerpt: "While Austin's barbecue legacy remains iconic, a new wave of Black chefs is introducing nuanced pan-African culinary concepts, James Beard nominations, and vibrant wine programs.",
+    pullQuote: "Our food is a transatlantic chronicle of resilience, trade winds, and culinary genius. Fine dining simply gives it the stage it has always deserved.",
+    pullQuoteAuthor: "Chef Marcus Delacroix",
+    keyTakeaways: ['Two Austin Black-owned restaurants earn Michelin Guide recommendations.', 'Locally sourced heirloom grains from Texas Black agricultural cooperatives.', 'Apprenticeship programs train young culinary students in kitchen economics.'],
+    paragraphs: [
+      "In a sun-drenched dining room on South Congress, diners savor charred okra with benne seed emulsion and slow-braised goat shank in aromatic pepper pot reduction.",
+      "Chef Marcus Delacroix is among a cohort of innovative restaurateurs who are pushing Austin's dining scene beyond tired tropes into a dynamic exploration of African diaspora gastronomy.",
+      "Supported by Black restaurant coalitions and local patrons, these dining rooms are both culinary temples and thriving economic engines."
+    ],
+    tags: ['Culinary Arts', 'Black Chefs', 'Fine Dining', 'James Beard', 'Austin Hospitality']
+  },
+
+  {
+    id: 'art-12',
+    slug: 'huston-tillotson-university-stem-endowment-milestone',
+    title: "Huston-Tillotson University Surpasses $50M STEM Endowment: Building the Future of HBCU Innovation",
+    subtitle: "Central Texas's oldest institution of higher learning expands its computer science labs, cyber defense centers, and environmental research institutes.",
+    category: 'Leadership',
+    isHero: false,
+    isFeatured: false,
+    isTrending: false,
+    views: 6520,
+    readTime: '4 min read',
+    date: 'September 03, 2026',
+    author: { name: 'DeMarcus Hayes', role: 'Education Editor', avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80', bio: 'DeMarcus Hayes writes on HBCUs and higher education equity.' },
+    imageUrl: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80',
+    imageCaption: 'Huston-Tillotson University students collaborating in the new Advanced Computing Lab.',
+    excerpt: "Founded in 1875, Huston-Tillotson University has achieved a historic fundraising milestone that positions its graduates at the forefront of Austin's tech and green energy economies.",
+    pullQuote: "HBCUs are the ultimate talent incubators. When Austin companies invest in HT, they are investing in the most loyal, creative problem solvers in the state.",
+    pullQuoteAuthor: "Dr. Archibald Henderson, Provost",
+    keyTakeaways: ['New 40,000 sq ft Center for Cyber Defense and Applied Artificial Intelligence.', 'Full-tuition scholarships awarded to 120 incoming Texas engineering students.', 'Direct internship pipelines with Apple, Dell Technologies, and Google Austin.'],
+    paragraphs: [
+      "Perched high on a hill in East Austin, the historic brick halls of Huston-Tillotson University have educated generations of African American teachers, doctors, and civic leaders.",
+      "With the successful completion of its landmark $50M STEM endowment campaign, the university has completed state-of-the-art computational facilities and recruited world-class faculty.",
+      "HT graduates are now commanding top-tier starting salaries across Austin's enterprise tech sector, proving that HBCU excellence is central to regional competitiveness."
+    ],
+    tags: ['Huston-Tillotson', 'HBCU Excellence', 'STEM Education', 'University Endowment', 'Austin Tech']
+  },
+
+  {
+    id: 'art-13',
+    slug: 'black-angel-investors-syndicate-central-texas-seed-capital',
+    title: "The Syndicate: How Black Angel Investors Are Self-Funding the Next Wave of Central Texas Startups",
+    subtitle: "Over 60 Black accredited investors combine capital to back underrepresented founders in fintech, healthtech, and logistics.",
+    category: 'Business',
+    isHero: false,
+    isFeatured: false,
+    isTrending: true,
+    views: 7410,
+    readTime: '4 min read',
+    date: 'September 02, 2026',
+    author: { name: 'Marcus Vance, M.S.', role: 'Technology Editor', avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80', bio: 'Marcus Vance writes on angel syndicates and venture investments.' },
+    imageUrl: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80',
+    imageCaption: 'Angel syndicate members reviewing pitch decks at a downtown Austin private investment dinner.',
+    excerpt: "Frustrated by the glacial pace of conventional venture diversity initiatives, Austin's Black tech executives and doctors formed their own angel syndicate to write checks directly.",
+    pullQuote: "We stopped asking for a seat at their investment committee. We built our own fund, set our own criteria, and backed the founders we believe in.",
+    pullQuoteAuthor: "Tasha Edwards, Syndicate Co-Founder",
+    keyTakeaways: ['Over $8.2M deployed across 14 early-stage Texas startups in 18 months.', 'Average check size ranges from $100K to $500K for seed and pre-Series A rounds.', 'Portfolio companies report a 92% follow-on funding success rate.'],
+    paragraphs: [
+      "In modern venture capital, the early 'friends and family' round often poses the steepest hurdle for founders from communities with less historic intergenerational wealth.",
+      "The Central Texas Black Angel Syndicate bridges this gap. Composed of physicians, corporate attorneys, tech directors, and sports executives, the syndicate evaluates companies on real market traction rather than warm demographic introductions.",
+      "Their investments have already yielded impressive exits and multi-million dollar institutional follow-ons, demonstrating that inclusive investing produces superior financial returns."
+    ],
+    tags: ['Angel Investing', 'Seed Capital', 'Venture Equity', 'Black Wealth', 'Fintech']
+  },
+
+  {
+    id: 'art-14',
+    slug: 'mental-health-equity-healing-generational-trauma-austin',
+    title: "Breaking the Silence: Black Therapists and Wellness Centers Dismantling Mental Health Stigma",
+    subtitle: "Community wellness initiatives provide accessible, culturally attuned psychotherapy, somatic healing, and trauma recovery services.",
+    category: 'Healthcare',
+    isHero: false,
+    isFeatured: false,
+    isTrending: false,
+    views: 5930,
+    readTime: '4 min read',
+    date: 'September 01, 2026',
+    author: { name: 'Dr. Camille Dubois, M.D.', role: 'Healthcare Contributor', avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80', bio: 'Dr. Dubois writes on public health and mental wellness.' },
+    imageUrl: 'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80',
+    imageCaption: 'Somatic group therapy session in a tranquil community garden studio in East Austin.',
+    excerpt: "Mental health practitioners across Travis County are creating safe, non-judgmental spaces where Black men, women, and teenagers can process stress, burnout, and generational trauma.",
+    pullQuote: "Healing is not a sign of weakness—it is the deepest revolutionary act. When our minds are whole, our communities are invincible.",
+    pullQuoteAuthor: "Dr. Nia Sterling, Licensed Clinical Psychologist",
+    keyTakeaways: ['Sliding-scale and insurance-covered therapy sessions expanded in East Austin.', 'Youth mental health workshops held across secondary schools and community centers.', 'Integration of somatic bodywork, mindfulness, and group dialogue.'],
+    paragraphs: [
+      "For decades, cultural taboos and justifiable skepticism toward healthcare institutions discouraged many African Americans from seeking professional mental health counseling.",
+      "Today in Austin, a vibrant collective of licensed Black psychologists, clinical social workers, and holistic practitioners is shattering those barriers.",
+      "By normalizing discussions around anxiety, career burnout in high-tech environments, and family dynamics, they are fostering emotional resilience for thousands of Central Texas families."
+    ],
+    tags: ['Mental Health', 'Wellness Equity', 'Psychotherapy', 'Somatic Healing', 'Austin Healthcare']
+  },
+
+  {
+    id: 'art-15',
+    slug: 'black-owned-real-estate-brokerages-navigating-market',
+    title: "Navigating the Hill Country Housing Market: How Black Real Estate Brokers Protect Family Wealth",
+    subtitle: "Specializing in property tax exemptions, estate planning, and first-time homebuyer down payment grants to curb property turnover.",
+    category: 'Business',
+    isHero: false,
+    isFeatured: false,
+    isTrending: false,
+    views: 6480,
+    readTime: '4 min read',
+    date: 'August 30, 2026',
+    author: { name: 'Anita C. Roberts', role: 'Publisher, ABBJ', avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80', bio: 'Anita C. Roberts writes on urban planning and Black land preservation.' },
+    imageUrl: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80',
+    imageCaption: 'Real estate broker guiding prospective homeowners through property deeds in Austin.',
+    excerpt: "In a competitive real estate landscape, Black brokers are serving as financial educators, helping families unlock equity while preserving family properties across generations.",
+    pullQuote: "Homeownership is the primary vehicle for American wealth accumulation. Our mission is to keep families in their homes and ensure deeds pass cleanly to their children.",
+    pullQuoteAuthor: "David Robinson, Managing Broker",
+    keyTakeaways: ['Free deed clinics clarify heirs property titles for longtime Travis County homeowners.', 'Down payment assistance workshops have helped over 320 first-time buyers.', 'Commercial real estate syndicates allow small investors to co-own commercial plazas.'],
+    paragraphs: [
+      "Austin's explosive real estate appreciation has minted millionaires, but it has also subjected longtime legacy homeowners to aggressive predatory purchase solicitations.",
+      "Black real estate professionals are meeting this challenge with education and advocacy. Through community deed workshops and estate planning clinics, brokers explain how to contest inflated tax assessments and structure living trusts.",
+      "Their counsel ensures that when Austin property values rise, legacy families reap the economic rewards rather than facing forced relocation."
+    ],
+    tags: ['Real Estate', 'Homeownership', 'Heirs Property', 'Wealth Preservation', 'Housing Equity']
+  },
+
+  {
+    id: 'art-16',
+    slug: 'austin-black-lawyers-association-judicial-appointments',
+    title: "Historic Bench: Austin Black Lawyers Association Celebrates Surge in Judicial Appointments",
+    subtitle: "Travis County district courts witness unprecedented demographic representation as seasoned trial attorneys assume judgeships.",
+    category: 'Legal',
+    isHero: false,
+    isFeatured: false,
+    isTrending: false,
+    views: 5820,
+    readTime: '4 min read',
+    date: 'August 28, 2026',
+    author: { name: 'Terrence Sterling, J.D.', role: 'Legal Affairs Correspondent', avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80', bio: 'Terrence Sterling reports on courtroom law.' },
+    imageUrl: 'https://images.unsplash.com/photo-1589994965851-a8f479c573a9?auto=format&fit=crop&w=800&q=80',
+    imageCaption: 'Gavel resting on legal briefs inside a Travis County district courtroom.',
+    excerpt: "Representation in the courtroom matters immensely for public faith in the rule of law. A record number of African American attorneys have ascended to the bench in Central Texas.",
+    pullQuote: "When defendants, victims, and jurors see a fair, dignified judge who reflects our broader community, justice ceases to feel like an adversarial machine.",
+    pullQuoteAuthor: "Judge Sonya Richardson, District Court",
+    keyTakeaways: ['Five new African American judges sworn into Travis and Williamson County courts.', 'Bail reform and restorative justice initiatives highlighted by new judicial leadership.', 'The Austin Black Lawyers Association provides continuing judicial education seminars.'],
+    paragraphs: [
+      "For decades, the portrait galleries hanging in Central Texas courthouses featured few African American faces in judicial robes.",
+      "Today, that reality has permanently shifted. The Austin Black Lawyers Association has mobilized mentorship pipelines that prepare outstanding litigators for the judiciary.",
+      "The newly appointed judges bring not only exceptional scholarly credentials but a deep, grounded understanding of criminal justice reform and civil equity."
+    ],
+    tags: ['Judicial Appointments', 'Travis County Courts', 'Legal Precedent', 'Judges', 'Justice Reform']
+  },
+
+  {
+    id: 'art-17',
+    slug: 'black-austin-environmental-justice-clean-energy-jobs',
+    title: "Green Corridors: How East Austin Environmental Activists Are Securing Clean Energy Careers",
+    subtitle: "From rooftop solar arrays to clean manufacturing training, community organizations ensure green subsidies benefit local residents.",
+    category: 'Community',
+    isHero: false,
+    isFeatured: false,
+    isTrending: false,
+    views: 5200,
+    readTime: '4 min read',
+    date: 'August 26, 2026',
+    author: { name: 'DeMarcus Hayes', role: 'Community Outreach Editor', avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80', bio: 'DeMarcus Hayes writes on environmental justice.' },
+    imageUrl: 'https://images.unsplash.com/photo-1508873696983-2df5703bc20d?auto=format&fit=crop&w=800&q=80',
+    imageCaption: 'Solar technicians installing high-efficiency panels in an East Austin workforce program.',
+    excerpt: "Environmental justice advocates in East Austin have spent decades fighting industrial polluters. Now, they are leading the charge into lucrative solar and battery storage careers.",
+    pullQuote: "The clean energy transition cannot simply be an upscale consumer trend. It must be an economic ladder for the neighborhoods that suffered the most pollution.",
+    pullQuoteAuthor: "Elena Marshall, Environmental Equity Director",
+    keyTakeaways: ['Over 180 East Austin residents certified as solar and battery technicians.', 'Community solar gardens lower monthly utility bills by up to 40% for low-income seniors.', 'City of Austin awards $4.5M in green infrastructure contracts to minority firms.'],
+    paragraphs: [
+      "Historically, East Austin bore the brunt of discriminatory industrial zoning, hosting fuel tank farms and manufacturing plants that threatened groundwater and air quality.",
+      "Today, the same community is driving Austin's clean energy renaissance. Workforce development non-profits have partnered with Austin Energy and solar developers to provide free technical training.",
+      "Graduates enter an industry with high-demand union wages, proving that environmental restoration and family-sustaining wages go hand-in-hand."
+    ],
+    tags: ['Environmental Justice', 'Clean Energy', 'Solar Careers', 'East Austin Green', 'Sustainability']
+  },
+
+  {
+    id: 'art-18',
+    slug: 'black-owned-creative-agencies-austin-advertising-boom',
+    title: "Storytelling with Soul: Black Creative Agencies Capturing National Brand Accounts in Austin",
+    subtitle: "Independent marketing and design studios prove that authentic cultural resonance drives superior consumer loyalty for Fortune 500 campaigns.",
+    category: 'Business',
+    isHero: false,
+    isFeatured: false,
+    isTrending: true,
+    views: 7150,
+    readTime: '4 min read',
+    date: 'August 24, 2026',
+    author: { name: 'Kendra Washington', role: 'Business Writer', avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80', bio: 'Kendra Washington covers advertising, design, and media.' },
+    imageUrl: 'https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&w=800&q=80',
+    imageCaption: 'Designers collaborating on a national brand campaign in an East Austin creative loft.',
+    excerpt: "Austin has long been an advertising powerhouse. Now, boutique Black-owned creative agencies are winning national agency-of-record pitches by centering genuine cultural insight.",
+    pullQuote: "Consumers can smell superficial tokenism from a mile away. Our campaigns win because they are steeped in authentic nuance, respect, and artistic brilliance.",
+    pullQuoteAuthor: "Jermaine Cole, Creative Agency Founder",
+    keyTakeaways: ['Three Austin-based Black agencies win Adweek and Cannes Lions honors.', 'Clients include major athletic brands, tech giants, and consumer packaged goods.', 'Local studios actively hire from Austin Community College design programs.'],
+    paragraphs: [
+      "Inside a converted industrial warehouse on 5th Street, dynamic typography, mood boards, and cinematic storyboards illuminate large digital displays.",
+      "The agency's founders cut their teeth in New York and Chicago ad agencies before setting up shop in Austin. Today, their roster includes household consumer brands looking to connect genuinely with multicultural audiences.",
+      "By controlling the creative narrative from concept to final cut, these agencies are establishing Austin as a premier hub for culturally intelligent storytelling."
+    ],
+    tags: ['Creative Agencies', 'Advertising', 'Design', 'Branding', 'Media Innovation']
+  },
+
+  {
+    id: 'art-19',
+    slug: 'most-influential-black-men-central-texas-civic-titans',
+    title: "Most Influential Black Men in Central Texas: Architects of Civic and Corporate Progress",
+    subtitle: "Austin Black Business Journal honors ten exceptional leaders whose integrity, philanthropy, and executive acumen shape the capital city.",
+    category: 'Leadership',
+    isHero: false,
+    isFeatured: false,
+    isTrending: true,
+    views: 8620,
+    readTime: '5 min read',
+    date: 'August 22, 2026',
+    author: { name: 'Anita C. Roberts', role: 'Publisher & Editor-in-Chief, ABBJ', avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80', bio: 'Anita C. Roberts is the Founder of Black Austin® and Publisher of the Austin Black Business Journal.' },
+    imageUrl: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80',
+    imageCaption: 'Honorees gathered at the Austin Black Business Journal Annual Leadership Reception.',
+    excerpt: "Each year, the Austin Black Business Journal honors men who exemplify leadership in corporate boardrooms, public administration, philanthropic foundations, and higher education.",
+    pullQuote: "Leadership is not a title bestowed upon your business card; it is the quiet responsibility to uplift every hand that reaches out behind you.",
+    pullQuoteAuthor: "Anita C. Roberts, Publisher",
+    keyTakeaways: ['Honorees represent banking, technology, municipal government, and non-profit leadership.', 'Collective philanthropic initiatives directed over $1.2M toward Central Texas youth programs.', 'Annual mentorship breakfasts connect honorees with college seniors.'],
+    paragraphs: [
+      "The men honored in this year's edition of the Austin Black Business Journal come from diverse backgrounds—military veterans, self-taught tech entrepreneurs, and seasoned corporate executives.",
+      "Yet they share a common thread: an unyielding dedication to ethical leadership and community uplift. Whether negotiating multi-million dollar corporate mergers or spending Saturday mornings mentoring boys at the Boys & Girls Club, their impact ripples across Travis County.",
+      "Their profiles serve as a beacon of what is possible when discipline, intellect, and empathy guide professional ambition."
+    ],
+    tags: ['Most Influential Men', 'Leadership Honors', 'Executive Mentorship', 'Civic Titans', 'Black Austin']
+  },
+
+  {
+    id: 'art-20',
+    slug: 'most-influential-black-women-central-texas-shaping-tomorrow',
+    title: "Most Influential Black Women in Central Texas: Leading with Vision, Courage, and Unmatched Grace",
+    subtitle: "Celebrating ten formidable women driving educational reform, biotechnology discoveries, legislative policy, and corporate innovation.",
+    category: 'Leadership',
+    isHero: false,
+    isFeatured: false,
+    isTrending: true,
+    views: 9140,
+    readTime: '5 min read',
+    date: 'August 20, 2026',
+    author: { name: 'Anita C. Roberts', role: 'Publisher & Editor-in-Chief, ABBJ', avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80', bio: 'Anita C. Roberts is the Publisher of the Austin Black Business Journal.' },
+    imageUrl: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80',
+    imageCaption: 'Women executives and community pioneers honored at the annual celebration of Black women leaders.',
+    excerpt: "Black women in Central Texas have long been the backbone of civic progress and family resilience. The Austin Black Business Journal proudly celebrates their executive and cultural leadership.",
+    pullQuote: "We stand on the sturdy shoulders of the women who cleaned state offices at midnight so their daughters could pass laws in those same marble halls at noon.",
+    pullQuoteAuthor: "Honoree Cheryl Powell, Esq.",
+    keyTakeaways: ['Honorees selected from hundreds of peer nominations across Central Texas.', 'Special recognition for founders of maternal healthcare non-profits.', 'New networking circles created to accelerate board seats for Black women executives.'],
+    paragraphs: [
+      "The trajectory of Austin's civic and business landscape is inextricably tied to the brilliance of Black women.",
+      "From hospital system chief executives managing thousands of healthcare workers to tech directors architecting algorithmic systems, this year's honorees embody extraordinary command and grace.",
+      "The Austin Black Business Journal remains deeply committed to chronicling their journeys, celebrating their victories, and ensuring their leadership is recognized on the national stage."
+    ],
+    tags: ['Most Influential Women', 'Women In Leadership', 'Corporate Pioneers', 'Public Policy', 'Austin Excellence']
+  },
+
+  {
+    id: 'art-21',
+    slug: 'black-owned-breweries-wineries-texas-hill-country',
+    title: "Vineyards and Craft Taps: Black Vintners and Brewers Making Waves in Texas Hill Country",
+    subtitle: "Challenging industry traditions with boutique varietals, craft IPAs, and community-centered hospitality spaces.",
+    category: 'Business',
+    isHero: false,
+    isFeatured: false,
+    isTrending: false,
+    views: 5410,
+    readTime: '4 min read',
+    date: 'August 18, 2026',
+    author: { name: 'Kendra Washington', role: 'Culture Writer', avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80', bio: 'Kendra Washington writes on hospitality and beverages.' },
+    imageUrl: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80',
+    imageCaption: 'Vintners inspecting Texas Hill Country grape clusters during harvest season.',
+    excerpt: "The rolling hills outside Austin are welcoming a fresh generation of beverage entrepreneurs who are blending agricultural mastery with welcoming tasting rooms.",
+    pullQuote: "Wine has always been about terroir and storytelling. Our wines carry the heritage of Black agricultural resilience into every glass.",
+    pullQuoteAuthor: "Leon Dupuis, Hill Country Vintner",
+    keyTakeaways: ['Texas Black Vintners Guild formed to support licensing and agricultural access.', 'Craft breweries host community fundraisers and live jazz performances.', 'Boutique Texas Tempranillo wins gold at the San Francisco Chronicle Wine Competition.'],
+    paragraphs: [
+      "For generations, American winemaking and craft brewing have suffered from narrow demographic participation.",
+      "Just forty minutes west of downtown Austin, Black vintners are changing that landscape on picturesque Hill Country acreage. By experimenting with heat-tolerant Mediterranean varietals, they produce award-winning wines that rival Napa and Sonoma.",
+      "Their tasting rooms have quickly become favorite weekend destinations for travelers seeking exceptional hospitality and world-class craft."
+    ],
+    tags: ['Texas Wine', 'Hill Country', 'Craft Brewing', 'Hospitality', 'Black Vintners']
+  },
+
+  {
+    id: 'art-22',
+    slug: 'pediatric-health-initiatives-austin-community-clinics',
+    title: "Guardians of Tomorrow: Up & Coming Pediatricians Safeguarding Child Health in Travis County",
+    subtitle: "Dr. Shane Constable and community clinic teams deliver preventative developmental screenings and asthma interventions to neighborhood schools.",
+    category: 'Healthcare',
+    isHero: false,
+    isFeatured: false,
+    isTrending: false,
+    views: 6120,
+    readTime: '4 min read',
+    date: 'August 16, 2026',
+    author: { name: 'Dr. Camille Dubois, M.D.', role: 'Healthcare Contributor', avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80', bio: 'Dr. Dubois covers pediatric wellness and public health.' },
+    imageUrl: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80',
+    imageCaption: 'Pediatrician performing routine developmental assessment in a welcoming clinic setting.',
+    excerpt: "Recognized as Up & Coming Doctors by the Austin Black Business Journal, pediatric physicians are taking healthcare directly to schools, community centers, and neighborhood parks.",
+    pullQuote: "If we catch developmental and respiratory issues before kindergarten, we fundamentally change a child's academic and emotional trajectory for life.",
+    pullQuoteAuthor: "Dr. Shane Constable, Pediatric Specialist",
+    keyTakeaways: ['Mobile health vans visit 28 Title I schools across Austin and Del Valle.', 'Free asthma management kits distributed to over 600 families.', 'Community clinics offer bilingual family navigation services.'],
+    paragraphs: [
+      "Childhood asthma and preventable developmental delays have historically plagued children in urban zip codes bordering highway corridors.",
+      "Pediatricians like Dr. Shane Constable at Austin Regional Clinic are meeting this challenge with mobile health units and school-based health clinics.",
+      "By establishing direct relationships with teachers, school nurses, and parents, they ensure children stay healthy, present, and ready to learn."
+    ],
+    tags: ['Pediatrics', 'Up & Coming Doctors', 'Child Health', 'Preventative Care', 'Travis County']
+  },
+
+  {
+    id: 'art-23',
+    slug: 'black-contractors-association-austin-transit-expansion',
+    title: "Building the Grid: Black Contractors Securing Prime Roles in Austin's Multi-Billion Transit Project",
+    subtitle: "Project Connect and airport expansion contracts establish stringent minority participation goals, creating generational construction enterprises.",
+    category: 'Business',
+    isHero: false,
+    isFeatured: false,
+    isTrending: true,
+    views: 7800,
+    readTime: '4 min read',
+    date: 'August 14, 2026',
+    author: { name: 'Terrence Sterling, J.D.', role: 'Legal & Business Correspondent', avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80', bio: 'Terrence Sterling covers municipal procurement and civil contracts.' },
+    imageUrl: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80',
+    imageCaption: 'Civil engineers and construction superintendents reviewing light rail blueprints in Austin.',
+    excerpt: "Austin's massive infrastructure modernization represents a once-in-a-generation procurement opportunity. The Black Contractors Association is ensuring local firms secure prime builder status.",
+    pullQuote: "We cannot just be the subcontractors laying the gravel. Our firms have the engineering horsepower to design the terminals and manage the light rail lines.",
+    pullQuoteAuthor: "Raymond Wallace, Construction CEO",
+    keyTakeaways: ['Minority business enterprise (MBE) participation on Project Connect reaches 26%.', 'Joint-venture alliances help medium-sized Black contractors bond multi-million projects.', 'Apprenticeships in electrical, tunneling, and steel fabrication create high-wage jobs.'],
+    paragraphs: [
+      "As Austin undertakes the largest transit expansion in Texas history—building underground tunnels, light rail routes, and modern airport terminals—the question of who builds the future is paramount.",
+      "The Black Contractors Association has worked closely with the City of Austin and regional transit authorities to unbundle massive procurement packages into accessible bidding tiers.",
+      "As a result, Black-owned engineering, concrete, and electrical firms are not just participating—they are serving as primary consortium leads."
+    ],
+    tags: ['Project Connect', 'Contractors', 'Transit Infrastructure', 'MBE Procurement', 'Civil Engineering']
+  },
+
+  {
+    id: 'art-24',
+    slug: 'black-austin-historical-reference-guide-anita-roberts',
+    title: "Documenting Our Legacy: The 'Achievements in Black Austin' Historical Reference Guide",
+    subtitle: "Publisher Anita C. Roberts's landmark reference book chronicles over 150 years of African American pioneers, institutions, and triumphs.",
+    category: 'Community',
+    isHero: false,
+    isFeatured: false,
+    isTrending: false,
+    views: 6890,
+    readTime: '5 min read',
+    date: 'August 12, 2026',
+    author: { name: 'DeMarcus Hayes', role: 'Education & Heritage Editor', avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80', bio: 'DeMarcus Hayes writes on African American history and archival preservation.' },
+    imageUrl: 'https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=800&q=80',
+    imageCaption: 'Archival photographs and historical documents from the Austin History Center.',
+    excerpt: "Without documented history, community memory fades. Anita C. Roberts's acclaimed reference guide preserves the names, businesses, and milestones of Black Central Texans for future generations.",
+    pullQuote: "If we do not write our own history, someone else will write our erasure. This volume is an unbreakable testament to our enduring presence in Austin.",
+    pullQuoteAuthor: "Anita C. Roberts, Author & Publisher",
+    keyTakeaways: ['Over 300 pages of verified archival biographies, historical photographs, and business registries.', 'Adopted into Austin Independent School District social studies supplementary curricula.', 'Archived permanently in the Library of Congress and Texas State Library.'],
+    paragraphs: [
+      "When future historians study the development of Central Texas, the volume 'Achievements in Black Austin – A Historical Reference Guide' will be their primary compass.",
+      "Authored by Anita C. Roberts, retired Army Lieutenant Colonel and Publisher of the Austin Black Business Journal, the book documents 150 years of triumphs against systemic obstacles.",
+      "From post-Emancipation freedmen settlements like Clarksville and Wheatville to modern corporate boardrooms, the guide cements Black Austin's central place in Texas history."
+    ],
+    tags: ['Historical Reference Guide', 'Anita C Roberts', 'Black Austin Heritage', 'Archives', 'Texas History']
+  },
+
+  {
+    id: 'art-25',
+    slug: 'black-fintech-founders-closing-racial-wealth-gap-texas',
+    title: "Democratizing Capital: Austin Black Fintech Founders Building Platforms for Everyday Savers",
+    subtitle: "Automated wealth accumulation, micro-lending, and financial literacy apps engineered by Central Texas software architects.",
+    category: 'Technology',
+    isHero: false,
+    isFeatured: false,
+    isTrending: true,
+    views: 7600,
+    readTime: '4 min read',
+    date: 'August 10, 2026',
+    author: { name: 'Marcus Vance, M.S.', role: 'Technology Editor', avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80', bio: 'Marcus Vance covers fintech and algorithmic systems.' },
+    imageUrl: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=800&q=80',
+    imageCaption: 'Fintech mobile interface designed to automate savings and fractional bond investments.',
+    excerpt: "Austin software engineers are utilizing open banking APIs and machine learning to build mobile applications that make generational wealth building accessible to all.",
+    pullQuote: "Financial literacy is powerful, but automated financial tooling that works for working-class families while they sleep is transformational.",
+    pullQuoteAuthor: "Darius King, Fintech Founder",
+    keyTakeaways: ['Austin fintech startup surpasses 450,000 active national subscribers.', 'Platform automates recurring micro-investments into index funds and local Black credit unions.', 'Secured $18M Series A led by Central Texas and national venture funds.'],
+    paragraphs: [
+      "Traditional retail banking often penalizes low balances with overdraft fees while reserving wealth management tools for high-net-worth accounts.",
+      "Darius King and a team of former PayPal and Stripe engineers in Austin set out to invert that dynamic. Their fintech platform automates spare-change rounding into low-cost index portfolios.",
+      "By demystifying compounding interest and making investment frictionless, they are providing hundreds of thousands of users with a reliable pathway to wealth."
+    ],
+    tags: ['Fintech', 'Wealth Equity', 'Software Innovation', 'SaaS Platforms', 'Austin Startups']
+  },
+
+  {
+    id: 'art-26',
+    slug: 'cybersecurity-fellowships-protecting-critical-infrastructure',
+    title: "Shielding the Grid: Black Cybersecurity Specialists Guarding Texas Energy and Civic Networks",
+    subtitle: "With cyber attacks targeting municipalities and power infrastructure, Central Texas Black security analysts lead the defense.",
+    category: 'Technology',
+    isHero: false,
+    isFeatured: false,
+    isTrending: false,
+    views: 6340,
+    readTime: '4 min read',
+    date: 'August 08, 2026',
+    author: { name: 'Marcus Vance, M.S.', role: 'Technology Editor', avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80', bio: 'Marcus Vance writes on security and defense.' },
+    imageUrl: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80',
+    imageCaption: 'Security Operations Center analysts monitoring live network intrusion vectors in Austin.',
+    excerpt: "As state and municipal systems face escalating digital threats, Austin's Black cybersecurity engineers are at the helm of security operations centers.",
+    pullQuote: "Cyber defense is the modern civil defense. Protecting water grids, hospital data, and voting systems is a patriotic duty.",
+    pullQuoteAuthor: "Kelvin Scott, Chief Information Security Officer",
+    keyTakeaways: ['Over 120 students completed Made Media Group Cyber Defense Bootcamps.', 'Central Texas Security Operations Center manages zero-trust architectures for municipal clients.', 'Salaries for certified security analysts average $145,000 in the Austin metro.'],
+    paragraphs: [
+      "In a darkened room filled with monitors mapping global network telemetry, Kelvin Scott and his incident response team analyze anomalous traffic patterns targeting regional infrastructure.",
+      "Scott, an Army cyber veteran, mentors young African American engineers through specialized security certifications, turning Austin into a hub for diverse cyber talent.",
+      "Their mission protects the integrity of electric utilities, hospital networks, and financial institutions across Texas."
+    ],
+    tags: ['Cybersecurity', 'Critical Infrastructure', 'Zero Trust', 'Tech Careers', 'Silicon Hills']
+  },
+
+  {
+    id: 'art-27',
+    slug: 'black-austin-visual-artists-public-art-murals',
+    title: "Canvases of Pride: Black Muralists and Sculptors Transforming Austin's Civic Landscapes",
+    subtitle: "Public art commissions along Pleasant Valley and Manor Road honor civil rights champions and imagine Afro-futurist landscapes.",
+    category: 'Community',
+    isHero: false,
+    isFeatured: false,
+    isTrending: false,
+    views: 5890,
+    readTime: '4 min read',
+    date: 'August 06, 2026',
+    author: { name: 'Kendra Washington', role: 'Arts & Culture Writer', avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80', bio: 'Kendra Washington covers public art and cultural expression.' },
+    imageUrl: 'https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=800&q=80',
+    imageCaption: 'Vibrant outdoor mural celebrating Black history and community joy in East Austin.',
+    excerpt: "Austin's public spaces are becoming richer and more inclusive as Black muralists, sculptors, and multimedia artists secure prestigious municipal commissions.",
+    pullQuote: "When a young girl walks to school and sees her grandmother's dignity reflected on a four-story wall, she knows she belongs in this city.",
+    pullQuoteAuthor: "Maya Coleman, Visual Artist & Muralist",
+    keyTakeaways: ['City of Austin allocates 2% of capital improvement budgets to diverse public art.', 'New outdoor sculpture garden dedicated at the George Washington Carver Museum.', 'Walking art tours attract thousands of cultural visitors to East Austin corridors.'],
+    paragraphs: [
+      "Towering across a four-story brick facade near the Carver Museum, the painted eyes of a young Black astronaut gaze upward toward constellations formed of Texas wildflowers.",
+      "The mural, painted by artist Maya Coleman, is part of a sweeping revival of public art in Central Texas that centers African American dignity and imagination.",
+      "Through partnerships with community arts councils, these murals ensure that as Austin grows, its artistic soul remains anchored in cultural truth."
+    ],
+    tags: ['Public Art', 'Carver Museum', 'Visual Arts', 'Murals', 'Afrofuturism']
+  },
+
+  {
+    id: 'art-28',
+    slug: 'corporate-boardroom-diversity-austin-public-companies',
+    title: "Seats at the Table: Increasing Black Representation on Austin's Public and Private Boards",
+    subtitle: "How executive search alliances and shareholder advocacy are breaking the monochromatic tradition of Texas corporate boards.",
+    category: 'Leadership',
+    isHero: false,
+    isFeatured: false,
+    isTrending: false,
+    views: 6730,
+    readTime: '4 min read',
+    date: 'August 04, 2026',
+    author: { name: 'Terrence Sterling, J.D.', role: 'Corporate Governance Correspondent', avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80', bio: 'Terrence Sterling writes on board governance and corporate law.' },
+    imageUrl: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80',
+    imageCaption: 'Board of directors deliberating strategic initiatives in a high-rise executive boardroom.',
+    excerpt: "Institutional investors and corporate governance experts in Austin are recognizing that diverse boards ask better questions, anticipate market shifts, and protect shareholder value.",
+    pullQuote: "A boardroom that only speaks to itself suffers from strategic myopia. True governance demands leaders who understand the whole market.",
+    pullQuoteAuthor: "Patricia Cunningham, Public Board Director",
+    keyTakeaways: ['Austin public companies added 11 African American independent directors in 2025–2026.', 'Audit and compensation committees report improved risk management metrics.', 'The Austin Black Business Journal Corporate Board Index tracks annual progress.'],
+    paragraphs: [
+      "For decades, the standard path to a corporate board seat in Texas ran through exclusive country club networks and closed executive circles.",
+      "Today, institutional investors are demanding rigorous qualification and authentic diversity. Black executives with deep operational, technological, and legal expertise are being recruited to lead critical audit and governance committees.",
+      "Their presence ensures that corporate strategies reflect the diverse realities of the 21st-century global marketplace."
+    ],
+    tags: ['Corporate Governance', 'Board Diversity', 'Executive Leadership', 'Shareholder Value', 'Public Companies']
+  },
+
+  {
+    id: 'art-29',
+    slug: 'austin-black-health-wellness-initiative-fair',
+    title: "Community Health & Wellness Initiative: Providing Free Screenings to Thousands Across Central Texas",
+    subtitle: "Made Media Group's flagship health outreach addresses hypertension, diabetes, and vision care with compassionate on-site medical care.",
+    category: 'Healthcare',
+    isHero: false,
+    isFeatured: false,
+    isTrending: true,
+    views: 8100,
+    readTime: '4 min read',
+    date: 'August 02, 2026',
+    author: { name: 'Dr. Camille Dubois, M.D.', role: 'Healthcare Contributor', avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80', bio: 'Dr. Dubois covers health equity and community outreach.' },
+    imageUrl: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80',
+    imageCaption: 'Volunteers and medical staff providing free blood pressure and glucose screenings.',
+    excerpt: "By bringing mobile clinics directly to churches, community centers, and recreation parks, Made Media Group is removing financial and geographic barriers to preventative wellness.",
+    pullQuote: "You cannot build wealth or pursue happiness if your health is compromised. Preventative care is the foundation of community power.",
+    pullQuoteAuthor: "Anita C. Roberts, Executive Director, Made Media Group",
+    keyTakeaways: ['Over 2,400 free comprehensive biometric screenings completed in 2026.', 'Partnership with St. David’s Foundation and Austin Regional Clinic provides follow-up care.', 'Free prescription eyewear and dental cleanings delivered to uninsured families.'],
+    paragraphs: [
+      "On a bright Saturday morning at the Millennium Youth Entertainment Complex, lines formed early as families arrived for the Made Media Group Community Health & Wellness Fair.",
+      "Volunteer doctors, nurses, and pharmacists provided free diabetes screenings, EKGs, vision tests, and nutritional counseling without asking for insurance cards or co-pays.",
+      "For hundreds of attendees, these screenings caught asymptomatic hypertension and pre-diabetes early, connecting them to ongoing care that saves lives."
+    ],
+    tags: ['Community Health', 'Wellness Initiative', 'Made Media Group', 'Free Screenings', 'Preventative Medicine']
+  },
+
+  {
+    id: 'art-30',
+    slug: 'black-austin-business-month-summit-economic-future',
+    title: "National Black Business Month: Austin Summit Maps Out Billion-Dollar Community Economic Roadmap",
+    subtitle: "Entrepreneurs, venture capitalists, and municipal leaders convene to establish long-term wealth preservation and procurement goals for Central Texas.",
+    category: 'Business',
+    isHero: false,
+    isFeatured: false,
+    isTrending: true,
+    views: 9600,
+    readTime: '5 min read',
+    date: 'July 31, 2026',
+    author: { name: 'Anita C. Roberts', role: 'Publisher & Editor-in-Chief, ABBJ', avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80', bio: 'Anita C. Roberts is the Founder of Black Austin® and Publisher of the Austin Black Business Journal.' },
+    imageUrl: 'https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=800&q=80',
+    imageCaption: 'Entrepreneurs and civic officials at the Austin Black Business Month Economic Summit.',
+    excerpt: "Black Business Month in Austin closed with a definitive plan: setting an ambitious target of $1 Billion in regional procurement contracts and venture investments by 2030.",
+    pullQuote: "We are standing on the threshold of unprecedented growth in Central Texas. Our mandate is clear: build enterprises that endure, scale, and generate generational wealth.",
+    pullQuoteAuthor: "Anita C. Roberts, Publisher & Editor-in-Chief",
+    keyTakeaways: ['Goal set for $1 Billion in municipal and private contracts awarded to Black enterprises by 2030.', 'Creation of the Central Texas Minority Business Accelerator on East 12th Street.', 'Annual publication of the Austin Black Business Directory distributed to 50,000 readers.'],
+    paragraphs: [
+      "The closing session of the Austin Black Business Month Summit was charged with an electric sense of purpose.",
+      "Convened by the Austin Black Business Journal, the gathering brought together tech CEOs, legacy restaurateurs, commercial developers, and regional bank presidents.",
+      "The roadmap outlined at the summit emphasizes strategic joint ventures, institutional capital access, and aggressive policy advocacy to ensure Black Austin is an undeniable economic powerhouse for decades to come."
+    ],
+    tags: ['Black Business Month', 'Economic Summit', 'Austin Future', 'Wealth Building', 'ABBJ 2030']
+  }
+];
+
+// Helper functions for filtering and querying
+export function getArticlesByCategory(category) {
+  if (!category || category === 'All') return ARTICLES;
+  return ARTICLES.filter((a) => a.category.toLowerCase() === category.toLowerCase());
+}
+
+export function getArticleBySlug(slug) {
+  return ARTICLES.find((a) => a.slug === slug);
+}
+
+export function getRelatedArticles(currentSlug, count = 3) {
+  const current = getArticleBySlug(currentSlug);
+  if (!current) return ARTICLES.slice(0, count);
+  return ARTICLES.filter((a) => a.slug !== currentSlug && a.category === current.category).slice(0, count);
+}
+
+export function getFeaturedArticles() {
+  return ARTICLES.filter((a) => a.isFeatured);
+}
+
+export function getTrendingArticles() {
+  return ARTICLES.filter((a) => a.isTrending);
+}
