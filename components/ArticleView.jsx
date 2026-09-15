@@ -36,6 +36,7 @@ export default function ArticleView({ slug }) {
   };
   const article = getArticleBySlug(slug) || ARTICLES[0];
   const related = getRelatedArticles(article.slug, 3);
+  const currentUrl = typeof window !== 'undefined' ? window.location.href : '';
 
   // Find previous and next articles in the database
   const currentIndex = ARTICLES.findIndex((a) => a.slug === article.slug);
@@ -390,7 +391,7 @@ export default function ArticleView({ slug }) {
           </span>
           <div className="flex items-center space-x-2">
             <a
-              href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(article.title)}&url=${encodeURIComponent(window.location.href)}`}
+              href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(article.title)}&url=${encodeURIComponent(currentUrl)}`}
               target="_blank"
               rel="noreferrer"
               className="p-2.5 bg-[#F8F7F4] hover:bg-[#8B0000] hover:text-white border border-[#E5E2DC] rounded-xs transition-colors text-xs"
@@ -399,7 +400,7 @@ export default function ArticleView({ slug }) {
               <FaXTwitter />
             </a>
             <a
-              href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`}
+              href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(currentUrl)}`}
               target="_blank"
               rel="noreferrer"
               className="p-2.5 bg-[#F8F7F4] hover:bg-[#0077b5] hover:text-white border border-[#E5E2DC] rounded-xs transition-colors text-xs"
@@ -408,7 +409,7 @@ export default function ArticleView({ slug }) {
               <FaLinkedinIn />
             </a>
             <a
-              href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`}
+              href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl)}`}
               target="_blank"
               rel="noreferrer"
               className="p-2.5 bg-[#F8F7F4] hover:bg-[#8B0000] hover:text-white border border-[#E5E2DC] rounded-xs transition-colors text-xs"
