@@ -1,5 +1,5 @@
-import ArticleView from '../../components/ArticleView.jsx';
-import { ARTICLES } from '../../data/articles.js';
+import ArticleView from '../../../components/ArticleView.jsx';
+import { ARTICLES } from '../../../data/articles.js';
 
 export async function generateStaticParams() {
   return ARTICLES.map((article) => ({
