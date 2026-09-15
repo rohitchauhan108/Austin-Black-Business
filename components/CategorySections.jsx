@@ -118,16 +118,13 @@ export default function CategorySections({ navigate, savedSlugs, onToggleSave })
                 </p>
               </div>
 
-              <div className="pt-3 border-t border-[#E5E2DC] flex items-center justify-between text-xs">
-                <span className="text-[11px] font-medium text-[#171717]">
-                  By {article.author.name}
-                </span>
-                <span
+              <div className="pt-3 border-t border-[#E5E2DC] flex justify-center">
+                <button
                   onClick={() => navigate(`/blog/${article.slug}`)}
-                  className="text-[#8B0000] font-bold flex items-center gap-1 cursor-pointer text-[11px]"
+                  className="px-5 py-2 bg-[#8B0000] hover:bg-[#6E0000] text-white text-[11px] font-bold uppercase tracking-wider rounded-xs transition-all flex items-center gap-1.5 shadow-sm hover:shadow-md transform hover:-translate-y-0.5 duration-200"
                 >
-                  Read Dispatch <FiArrowRight />
-                </span>
+                  Read Story <FiArrowRight className="text-[10px]" />
+                </button>
               </div>
             </div>
           ))}
@@ -269,15 +266,12 @@ export default function CategorySections({ navigate, savedSlugs, onToggleSave })
                 <p className="text-xs sm:text-sm text-[#6B6B6B] leading-relaxed mb-4">
                   {techArticles[0].excerpt}
                 </p>
-                <div className="flex items-center justify-between text-xs pt-3 border-t border-[#E5E2DC]">
-                  <span className="font-semibold text-[#171717]">
-                    By {techArticles[0].author.name}
-                  </span>
+                <div className="flex justify-center pt-3 border-t border-[#E5E2DC]">
                   <button
                     onClick={() => navigate(`/blog/${techArticles[0].slug}`)}
-                    className="text-[#8B0000] font-bold flex items-center gap-1 cursor-pointer"
+                    className="px-6 py-2.5 bg-[#8B0000] hover:bg-[#6E0000] text-white text-xs font-bold uppercase tracking-wider rounded-xs transition-all flex items-center gap-2 shadow-sm hover:shadow-md transform hover:-translate-y-0.5 duration-200"
                   >
-                    Read Analysis <FiArrowRight className="text-xs" />
+                    Read Story <FiArrowRight className="text-xs" />
                   </button>
                 </div>
               </div>
@@ -382,16 +376,13 @@ export default function CategorySections({ navigate, savedSlugs, onToggleSave })
                 </p>
               </div>
 
-              <div className="pt-3 border-t border-[#E5E2DC] flex items-center justify-between text-xs">
-                <span className="text-[11px] font-medium text-[#171717]">
-                  {article.author.name}
-                </span>
-                <span
+              <div className="pt-3 border-t border-[#E5E2DC] flex justify-center">
+                <button
                   onClick={() => navigate(`/blog/${article.slug}`)}
-                  className="text-[#8B0000] font-bold flex items-center gap-1 cursor-pointer text-[11px]"
+                  className="px-5 py-2 bg-[#8B0000] hover:bg-[#6E0000] text-white text-[11px] font-bold uppercase tracking-wider rounded-xs transition-all flex items-center gap-1.5 shadow-sm hover:shadow-md transform hover:-translate-y-0.5 duration-200"
                 >
-                  Read Profile <FiArrowRight />
-                </span>
+                  Read Story <FiArrowRight className="text-[10px]" />
+                </button>
               </div>
             </div>
           ))}
@@ -470,16 +461,13 @@ export default function CategorySections({ navigate, savedSlugs, onToggleSave })
                 )}
               </div>
 
-              <div className="pt-3 border-t border-[#E5E2DC] flex items-center justify-between text-xs">
-                <span className="font-semibold text-[#171717]">
-                  By {article.author.name}
-                </span>
-                <span
+              <div className="pt-3 border-t border-[#E5E2DC] flex justify-center">
+                <button
                   onClick={() => navigate(`/blog/${article.slug}`)}
-                  className="text-[#8B0000] font-bold flex items-center gap-1 cursor-pointer"
+                  className="px-5 py-2 bg-[#8B0000] hover:bg-[#6E0000] text-white text-[11px] font-bold uppercase tracking-wider rounded-xs transition-all flex items-center gap-1.5 shadow-sm hover:shadow-md transform hover:-translate-y-0.5 duration-200"
                 >
-                  Read Feature <FiArrowRight className="text-xs" />
-                </span>
+                  Read Story <FiArrowRight className="text-xs" />
+                </button>
               </div>
             </div>
           ))}
@@ -550,16 +538,13 @@ export default function CategorySections({ navigate, savedSlugs, onToggleSave })
                 </div>
               </div>
 
-              <div className="px-5 pb-4 pt-3 border-t border-[#E5E2DC] flex items-center justify-between text-xs">
-                <span className="text-[#6B6B6B] text-[11px]">
-                  By {article.author.name}
-                </span>
-                <span
+              <div className="px-5 pb-4 pt-3 border-t border-[#E5E2DC] flex justify-center">
+                <button
                   onClick={() => navigate(`/blog/${article.slug}`)}
-                  className="text-[#8B0000] font-bold flex items-center gap-1 cursor-pointer"
+                  className="px-5 py-2 bg-[#8B0000] hover:bg-[#6E0000] text-white text-[11px] font-bold uppercase tracking-wider rounded-xs transition-all flex items-center gap-1.5 shadow-sm hover:shadow-md transform hover:-translate-y-0.5 duration-200"
                 >
                   Read Story <FiArrowRight className="text-[10px]" />
-                </span>
+                </button>
               </div>
             </div>
           ))}

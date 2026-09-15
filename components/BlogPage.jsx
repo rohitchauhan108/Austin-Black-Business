@@ -168,27 +168,10 @@ export default function BlogPage({
                 </blockquote>
               </div>
 
-              <div className="pt-4 border-t border-[#E5E2DC] flex items-center justify-between">
-                <div className="flex items-center gap-2.5">
-                  <img
-                    src={featuredStory.author.avatar}
-                    alt={featuredStory.author.name}
-                    referrerPolicy="no-referrer"
-                    className="w-8 h-8 rounded-full object-cover border border-[#E5E2DC]"
-                  />
-                  <div>
-                    <h5 className="text-xs font-bold text-[#171717]">
-                      {featuredStory.author.name}
-                    </h5>
-                    <p className="text-[10px] text-[#6B6B6B]">
-                      {featuredStory.author.role}
-                    </p>
-                  </div>
-                </div>
-
+              <div className="pt-6 border-t border-[#E5E2DC] flex justify-center">
                 <button
                   onClick={() => navigate(`/blog/${featuredStory.slug}`)}
-                  className="text-xs font-bold uppercase tracking-wider text-[#8B0000] group-hover:underline flex items-center gap-1 transition-colors"
+                  className="px-6 py-2.5 bg-[#8B0000] hover:bg-[#6E0000] text-white text-xs font-bold uppercase tracking-wider rounded-xs transition-all flex items-center gap-2 shadow-sm hover:shadow-md transform hover:-translate-y-0.5 duration-200"
                 >
                   Read Story <FiArrowRight />
                 </button>
@@ -344,25 +327,14 @@ export default function BlogPage({
                   </div>
                 </div>
 
-                {/* Author Footer */}
-                <div className="px-5 sm:px-6 pb-5 pt-3 border-t border-[#E5E2DC] flex items-center justify-between text-xs">
-                  <div className="flex items-center gap-2">
-                    <img
-                      src={article.author.avatar}
-                      alt={article.author.name}
-                      referrerPolicy="no-referrer"
-                      className="w-7 h-7 rounded-full object-cover border border-[#E5E2DC]"
-                    />
-                    <span className="text-[#171717] font-semibold text-[11px] truncate max-w-[120px]">
-                      {article.author.name}
-                    </span>
-                  </div>
-                  <span
+                {/* Footer Button */}
+                <div className="px-5 sm:px-6 pb-5 pt-3 border-t border-[#E5E2DC] flex justify-center">
+                  <button
                     onClick={() => navigate(`/blog/${article.slug}`)}
-                    className="text-[#8B0000] font-bold flex items-center gap-1 cursor-pointer text-xs hover:underline"
+                    className="px-5 py-2 bg-[#8B0000] hover:bg-[#6E0000] text-white text-[11px] font-bold uppercase tracking-wider rounded-xs transition-all flex items-center gap-1.5 shadow-sm hover:shadow-md transform hover:-translate-y-0.5 duration-200"
                   >
-                    Read <FiArrowRight className="text-[10px]" />
-                  </span>
+                    Read Story <FiArrowRight className="text-[10px]" />
+                  </button>
                 </div>
               </article>
             );

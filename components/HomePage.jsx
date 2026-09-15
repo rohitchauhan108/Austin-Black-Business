@@ -105,25 +105,12 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="pt-6 border-t border-[#E5E2DC] flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <img
-                  src={leadStory.author.avatar}
-                  alt={leadStory.author.name}
-                  referrerPolicy="no-referrer"
-                  className="w-11 h-11 rounded-full object-cover border border-[#E5E2DC]"
-                />
-                <div>
-                  <h4 className="text-sm font-bold text-[#171717]">{leadStory.author.name}</h4>
-                  <p className="text-xs text-[#666]">{leadStory.author.role}</p>
-                </div>
-              </div>
-
+            <div className="pt-6 border-t border-[#E5E2DC] flex justify-center">
               <button
                 onClick={() => navigate(`/blog/${leadStory.slug}`)}
-                className="text-sm font-bold text-[#8B0000] hover:underline flex items-center gap-1.5 uppercase tracking-wider cursor-pointer"
+                className="px-7 py-3 bg-[#8B0000] hover:bg-[#6E0000] text-white text-sm font-bold uppercase tracking-wider rounded-xs transition-all flex items-center gap-2 shadow-sm hover:shadow-md transform hover:-translate-y-0.5 duration-200"
               >
-                Full Story <FiArrowRight className="text-sm" />
+                Read Story <FiArrowRight className="text-sm" />
               </button>
             </div>
           </div>
@@ -191,14 +178,13 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div className="px-6 pb-5 pt-3 border-t border-[#E5E2DC] flex items-center justify-between text-xs sm:text-sm">
-                <span className="text-[#666] font-medium">By {article.author.name}</span>
-                <span
+              <div className="px-6 pb-5 pt-3 border-t border-[#E5E2DC] flex justify-center">
+                <button
                   onClick={() => navigate(`/blog/${article.slug}`)}
-                  className="text-[#8B0000] font-bold flex items-center gap-1 cursor-pointer hover:underline"
+                  className="px-5 py-2 bg-[#8B0000] hover:bg-[#6E0000] text-white text-xs sm:text-[11px] font-bold uppercase tracking-wider rounded-xs transition-all flex items-center gap-1.5 shadow-sm hover:shadow-md transform hover:-translate-y-0.5 duration-200"
                 >
-                  Read Dispatch <FiArrowRight className="text-xs" />
-                </span>
+                  Read Story <FiArrowRight className="text-[10px]" />
+                </button>
               </div>
             </div>
           ))}
