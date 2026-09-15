@@ -1003,8 +1003,197 @@ export const ARTICLES = [
       "The roadmap outlined at the summit emphasizes strategic joint ventures, institutional capital access, and aggressive policy advocacy to ensure Black Austin is an undeniable economic powerhouse for decades to come."
     ],
     tags: ['Black Business Month', 'Economic Summit', 'Austin Future', 'Wealth Building', 'ABBJ 2030']
+  },
+
+  {
+    id: 'art-31',
+    slug: 'black-business-journals-kid-press-corps-trains-local-tv-station',
+    title: "Black Business Journal's Kid Press Corps Trains At Local TV Station",
+    subtitle: "Emmy Award-winning journalist Ashley Goudeau sat down with Black Business Journal's Kid Reporters to share a few tricks of the trade.",
+    category: 'Community',
+    isHero: false,
+    isFeatured: false,
+    isTrending: false,
+    views: 0,
+    readTime: '3 min read',
+    date: 'September 15, 2026',
+    author: {
+      name: 'Black Business Journal Editorial Team',
+      role: 'Community News Desk',
+      avatar: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=300&q=80',
+      bio: 'The Black Business Journal Editorial Team covers stories of community leadership, education, and opportunity across Central Texas.'
+    },
+    imageUrl: '/blog1.jpg',
+    imageCaption: 'Ashley Goudeau teaching Kid Reporters interview techniques.',
+    excerpt: "Six Kid Reporters had the opportunity to train first hand in a local television station thanks to television news Anchor Ashley Goudeau.",
+    pullQuote: 'Research your story, write down your questions, and listen closely.',
+    pullQuoteAuthor: 'Ashley Goudeau, KVUE Midday Anchor and Political Reporter',
+    keyTakeaways: [
+      'Research who or what your story is about.',
+      'Write down your questions.',
+      'Listen closely during your interview to ask follow-up questions.'
+    ],
+    paragraphs: [
+      "Six Kid Reporters had the opportunity to train first hand in a local television station thanks to television news Anchor Ashley Goudeau.",
+      "Goudeau said she is blessed to be a part of the KVUE news team, serving the people of Central Texas and was thrilled to share her knowledge with the young journalists.",
+      "Goudeau serves as KVUE's Midday anchor and as KVUE's political reporter. Goudeau shared that on the last day of her sophomore year of high school her history teacher told her she would be a great television news reporter. He said her versatility and ability to strike up a conversation with anyone would help make her a great journalist.",
+      "Goudeau gave the Kid Journalists valuable information on conducting live TV interviews. She told the crew of six local elementary and middle school students who are interested in TV careers the three keys to live TV interview.",
+      "The trip was sponsored by Made Media Group, a local nonprofit, whose mission is to help minority kids seek careers in media and technology.",
+      "Contact info@blackbusinessjournal.com if you have a story to share with our local journalists."
+    ],
+    tags: ['Kid Press Corps', 'Ashley Goudeau', 'KVUE', 'Media Careers', 'Youth Journalism']
+  },
+
+  {
+    id: 'art-32',
+    slug: 'have-you-seen-gracie-missing-giraffe-texas-hill-country',
+    title: 'Have you seen Gracie, the missing giraffe in the Texas hill country?',
+    subtitle: 'Authorities are searching for a giraffe named Gracie after the animal escaped a ranch in Real County on Monday.',
+    category: 'Community',
+    isHero: false,
+    isFeatured: false,
+    isTrending: true,
+    views: 4210,
+    readTime: '3 min read',
+    date: 'September 15, 2026',
+    author: {
+      name: 'Black Business Journal Editorial Team',
+      role: 'Community News Desk',
+      avatar: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=300&q=80',
+      bio: 'The Black Business Journal Editorial Team covers local and community stories across Central Texas and beyond.'
+    },
+    imageUrl: '/blog2.jpg',
+    imageCaption: 'A giraffe on a Texas ranch as authorities continue the search for Gracie.',
+    excerpt: 'Authorities are searching for a giraffe named Gracie after the animal escaped a ranch in Real County, while ranch staff say she has been located and is expected to return home Tuesday.',
+    pullQuote: 'She’s a little farther away than I’d like her to be, but we’re hopeful she’ll be back home sometime Tuesday.',
+    pullQuoteAuthor: 'Vick Jones, ranch manager',
+    keyTakeaways: [
+      'Gracie escaped from Cedar Hollow Ranch in Real County on Monday.',
+      'The ranch manager said Gracie has been located and is expected to return home Tuesday.',
+      'The ranch has kept giraffes for at least 30 years.',
+      'The animal was last seen on a game camera west of Leakey.'
+    ],
+    paragraphs: [
+      'Authorities are searching for a giraffe named Gracie after the animal escaped a ranch in Real County on Monday. The ranch manager said they have located Gracie and are hopeful she will be back home sometime Tuesday.',
+      'The ranch has had giraffes for at least 30 years, the manager said. According to a Facebook post made by the Real County Animal Rescue-Shelter, the giraffe named Gracie disappeared from the Cedar Hollow Ranch.',
+      'Gracie was last spotted on a game camera west of Leakey, according to the post. Vick Jones, who manages the ranch, told FOX Local that Gracie has been located. He’s hopeful she’ll be back at the ranch sometime Tuesday.',
+      '“She’s a little farther (away) than I’d like her to be,” Jones said, when asked where Gracie had been found. Jones said they have had giraffes at the ranch for at least 30 years. He said Gracie wandered into a part of the ranch where the giraffes hadn’t gone before and was able to get out of a gate.',
+      'The incident has drawn attention from local residents and animal welfare groups in the Texas Hill Country, where the search for the missing giraffe has become a community story. Ranch staff continue to monitor the area as they work to guide Gracie back toward the property safely.'
+    ],
+    tags: ['Texas Hill Country', 'Real County', 'Missing Giraffe', 'Wildlife', 'Animal Rescue']
+  },
+
+  {
+    id: 'art-33',
+    slug: 'austin-paid-766k-for-police-chief-exit-heres-what-happened',
+    title: "Austin Paid $766K for a Police Chief Exit—Here’s What Happened",
+    subtitle: "The payout to former interim police chief Robin Henderson reflects a broader nationwide challenge of recruiting top police executives, experts say.",
+    category: 'Community',
+    isHero: false,
+    isFeatured: false,
+    isTrending: true,
+    views: 0,
+    readTime: '6 min read',
+    date: 'September 15, 2026',
+    author: {
+      name: 'Black Business Journal Editorial Team',
+      role: 'Investigations Desk',
+      avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80',
+      bio: 'The Black Business Journal Editorial Team tracks civic accountability, public-sector leadership, and the cost of governance in Central Texas.'
+    },
+    imageUrl: '/blog3.webp',
+    imageCaption: 'Former interim Austin police chief Robin Henderson during a period of transition in city leadership.',
+    excerpt: "A departing Austin police leader received a $766,000 payout after city officials crafted an unusual compensation deal to persuade her to take over the department on an interim basis, according to records obtained by the American-Statesman.",
+    pullQuote: "It is pretty shocking. When we talk about public service, that is usually not the most lucrative path.",
+    pullQuoteAuthor: 'City Council Member Ryan Alter',
+    keyTakeaways: [
+      'Austin paid former interim chief Robin Henderson $766,236 in total compensation and exit-related payouts.',
+      'The package included pension-related payments, sick leave accruals, and incentives tied to leadership continuity.',
+      'Experts say the arrangement reflects a national challenge in recruiting experienced police leaders under intense public scrutiny.',
+      'The agreement drew criticism as Austin faces budget pressure and questions over public spending.'
+    ],
+    paragraphs: [
+      "A departing Austin police leader received a $766,000 payout after city officials crafted an unusual compensation deal to persuade her to take over the department on an interim basis, according to records obtained by the American-Statesman.",
+      "The January payment far exceeds what most city executives or police officers receive when they retire and has raised questions among local officials as Austin confronts budget pressure and increased scrutiny over spending.",
+      "\"It is pretty shocking,\" City Council Member Ryan Alter said. \"When we talk about public service, that is usually not the most lucrative path.\"",
+      "The agreement reflects a broader challenge facing cities nationwide: recruiting and retaining top police leaders has become more difficult in recent years, prompting some governments to offer enhanced pay, pension protections, and exit packages. In Austin, officials said the deal was designed to keep a veteran officer in place during a period of high attrition and leadership turnover — but the size and structure of the payout highlight the financial tradeoffs of those efforts.",
+      "To secure Robin Henderson's agreement to serve as interim chief in 2023, the city structured a package that supplemented her salary, protected her pension contributions and added incentives for her to remain in the role until a permanent chief was hired.",
+      "Those provisions — including pension-related payments, expanded sick leave payouts and additional compensation negotiated at the end of her tenure — ultimately brought her total payout to $766,236.",
+      "Henderson, a nearly three-decade veteran of the department, retired in January. Her payout included more than $374,000 tied to pension-related payments, about $336,000 in unused sick leave and tens of thousands of dollars in additional compensation and stipends.",
+      "Henderson, in a written statement, defended the payout as fair and said it was an honor to serve Austin for nearly 29 years. \"I appreciate the City's response to my unique situation and responding appropriately,\" she said.",
+      "The agreement was negotiated during a period of transition at City Hall, when both the city manager and assistant city manager overseeing the police department were serving in interim roles. Officials said the arrangement did not require City Council approval because it was structured as an employment compensation matter.",
+      "Bruce Mills, then interim assistant city manager, said the deal was intended to persuade Henderson — who was eligible to retire — to step into a role few others were positioned to fill. \"We wanted to make sure she was properly compensated to serve as the interim chief, knowing this was not going to be a three month, four month job but a relatively long period of time,\" Mills said. \"We went the extra mile to make sure she was generously compensated.\"",
+      "At the time, the department was grappling with staffing shortages and leadership turnover. Henderson, who had been serving as chief of staff, had broad internal support, Mills said.",
+      "The agreement ensured that Henderson's pay would match that of the previous police chief, even though she was technically serving in an interim role. It also included additional payments to offset income she lost when a labor contract between the city and rank-and-file officers lapsed — a gap that did not apply to her position.",
+      "\"I was the only sworn member of the department under the Meet and Confer agreement facing a reduction in pay and reduction in pension contributions,\" she wrote in her statement.",
+      "But the largest component of the payout stemmed from how the city handled her pension. Because portions of Henderson's compensation were structured as stipends — which are not counted toward pension contributions — the city agreed to make a lump-sum payment when she retired to account for what she otherwise would have contributed, along with projected growth over time. That payment totaled nearly $375,000.",
+      "Mills said he was surprised to learn that the agreement netted that amount for Henderson's pension. The agreement also included incentives designed to keep Henderson in the role until a permanent chief was hired.",
+      "Like other officers, she was already eligible to be paid out for up to 1,700 hours of unused sick leave — a benefit that can result in six-figure payouts for longtime employees. Henderson, who rarely took sick leave, received about $243,500 under that provision. Her interim chief agreement added up to 800 more hours of supplemental sick leave, worth roughly $92,700.",
+      "When the city hired Police Chief Lisa Davis in August 2024, officials initially planned for Henderson to transition out of the department while remaining on the payroll through January. Under that agreement, she would not have been required to report to work.",
+      "Instead, Davis asked Henderson to remain in a full-time role to help with the leadership transition, according to city officials. Davis, who earns $288,000 a year, did not negotiate an agreement like Henderson's.",
+      "Henderson stayed on for another 14 months, a period that became increasingly rocky. In a November email to Davis, she said she felt sidelined during organizational changes and expressed concern about the uncertainty surrounding her retirement timeline.",
+      "\"I would hope and appreciate this process being handled with dignity and respect,\" she wrote. Henderson also raised concerns about additional compensation not detailed in earlier agreements. Those discussions led to a December deal in which the city agreed to pay her $55,000 in exchange for releasing any potential legal claims.",
+      "Current Deputy City Manager Jon Fortune said he honored the existing agreements when issuing Henderson's final payout earlier this year.",
+      "City officials said Henderson's payout was funded through the police department's budget, using money set aside for contractual obligations such as sick leave payouts, and did not affect operations.",
+      "Still, the payment comes as Austin leaders face mounting pressure to rein in spending amid a serious budget crunch and revelations that some officials had expensed solo meals, upgraded flights and other questionable items. Earlier this year, the City Council approved an outside audit aimed at identifying cuts and restoring public trust.",
+      "\"Clearly, Robin dedicated her career to the city, and we should properly value that,\" Alter, the council member, said. \"It is also a little bit frustrating that when we are always told that there is no money, and there are no cuts that the police department can make, that they were able to find hundreds of thousands of dollars for this purpose.\"",
+      "Experts say such agreements, while uncommon, are becoming more prevalent as cities compete for a limited pool of experienced police leaders. \"We saw 2020 was the year of 'defund the police,' but in the years after that, it has been 'pay the police,'\" said Ian Adams, a criminology professor at the University of South Carolina and former police labor leader.",
+      "\"The people qualified to run our largest public policing organizations — this is not a widely distributed skill set,\" Adams said. Gene Ellis, executive director of the Texas Police Chiefs Association, said some chiefs now negotiate severance protections or guaranteed compensation before taking top jobs because of the political volatility of the role.",
+      "\"You are in a position that is under a lot of pressure, a lot of scrutiny,\" he said. Both declined to comment directly on Henderson's agreement, though Adams noted that compensation for public officials should be subject to public scrutiny.",
+      "Austin Human Resources Director Susan Sinz, who was hired two years ago and has worked in municipal government for decades, described agreements like Henderson's as \"super exceptional.\" \"It has to be for a very specific set of circumstances,\" she said. \"It just doesn't happen that often.\"",
+      "Henderson, in her statement, said she planned to continue serving the community during her retirement. \"It was an honor and privilege to work for the City and serve our Austin community for almost 29 years as an Austin police officer,\" she said. \"In my retirement, I will remain active to make a positive contribution to our Austin community.\""
+    ],
+    tags: ['Austin Police', 'Robin Henderson', 'Police Leadership', 'Public Spending', 'City Budget']
+  },
+
+  {
+    id: 'art-34',
+    slug: 'austin-black-business-journal-launches-community-health-wellness-initiative',
+    title: 'Austin Black Business Journal Launches Community Health & Wellness Initiative, Invites Public Engagement',
+    subtitle: 'Join us as we Elevate Health & Wellness. Strengthen the Black Communities.',
+    category: 'Community',
+    isHero: false,
+    isFeatured: false,
+    isTrending: true,
+    views: 0,
+    readTime: '5 min read',
+    date: 'September 15, 2026',
+    author: {
+      name: 'Black Business Journal Editorial Team',
+      role: 'Community Health Desk',
+      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80',
+      bio: 'The Black Business Journal Editorial Team covers community health, wellness, and public engagement across Central Texas.'
+    },
+    imageUrl: '/blog4.png',
+    imageCaption: 'ABBJ is inviting the community to participate in its new Health & Wellness Initiative through listening sessions, subscriptions, and public engagement.',
+    excerpt: 'The Austin Black Business Journal & Community News Magazine is calling on the community to help shape a new health-focused media initiative designed to elevate Black voices, concerns, and lived experiences across Central Texas.',
+    pullQuote: 'We believe the most powerful stories come directly from the community. This initiative is about more than reporting—it’s about listening, engaging, and ensuring that our coverage reflects real needs, real barriers, and real solutions.',
+    pullQuoteAuthor: 'ABBJ Leadership',
+    keyTakeaways: [
+      'ABBJ launched a Health & Wellness Initiative focused on mental health, chronic disease, preventive care, and social determinants of health.',
+      'The effort aims to reach more than 120,000 readers in the next two years.',
+      'Residents can subscribe, request a free copy of the upcoming issue, share health concerns, and submit story ideas.',
+      'The initiative includes listening sessions, health summits, volunteer opportunities, and print distribution support for seniors and digitally underserved residents.'
+    ],
+    paragraphs: [
+      'The Austin Black Business Journal & Community News Magazine (ABBJ) is calling on the community to help shape a new, health-focused media initiative designed to elevate the voices, concerns, and lived experiences of Black residents across Central Texas.',
+      'As part of its expanded commitment to community-centered journalism, ABBJ has launched a Health & Wellness Initiative that will focus on critical issues including mental health, chronic disease, preventive care, and the social determinants of health. The initiative is expected to reach over 120,000 readers within the next two years, providing culturally relevant and accessible information to communities that are often underserved by traditional media.',
+      'At the heart of this effort is a newly released community engagement form, which invites residents to not only subscribe to the publication, but also actively participate in shaping its editorial direction.',
+      '“We believe the most powerful stories come directly from the community,” said ABBJ leadership. “This initiative is about more than reporting—it’s about listening, engaging, and ensuring that our coverage reflects real needs, real barriers, and real solutions.”',
+      'Through the form, community members can subscribe to ABBJ in print or digital format, request a free copy of the upcoming Health & Wellness Issue, share insights on the most pressing health and social issues affecting their communities, and submit story ideas or express interest in contributing content.',
+      'In addition to content contributions, ABBJ is expanding its community presence through listening sessions, health summits, and resource events. Residents can sign up to attend, volunteer, or even partner and sponsor these efforts.',
+      'A key focus of the initiative is accessibility. ABBJ is also seeking volunteers to assist with monthly print distribution, ensuring that seniors and individuals with limited digital access can still receive trusted health information.',
+      'This approach reflects a broader shift in local media—one that prioritizes community voice, equity, and direct engagement as essential components of effective journalism.',
+      'Residents interested in participating are encouraged to scan the official ABBJ QR code to access the form, subscribe, and get involved.',
+      'As ABBJ continues to expand its reach and impact, this initiative signals a clear goal: to inform, empower, and uplift the health of Black communities across Central Texas—together.'
+    ],
+    tags: ['Health & Wellness', 'Community Health', 'Black Communities', 'Public Engagement', 'ABBJ']
   }
 ];
+
+ARTICLES.sort((firstArticle, secondArticle) => {
+  return new Date(secondArticle.date) - new Date(firstArticle.date);
+});
 
 // Helper functions for filtering and querying
 export function getArticlesByCategory(category) {
