@@ -125,7 +125,7 @@ export default function AboutPage() {
             Informing, Empowering, and Transforming African American Enterprise in Central Texas.
           </h1>
           <p className="text-base sm:text-xl text-[#444] leading-relaxed font-normal">
-            Austin Black Business Journal & Community News Magazine is published by <strong>Made Media Group</strong>, a certified 501(c)(3) non-profit organization dedicated to economic equity, civic education, and leadership recognition. We chronicle the innovators, visionaries, and community pillars defining Central Texas’s economic landscape.
+            Austin Black Business Journal & Community News magazine is published by <strong>Made Media Group</strong>, a certified 501(c)(3) non-profit organization dedicated to economic equity, civic education, and leadership recognition. We chronicle the innovators, visionaries, and community pillars defining Central Texas’s economic landscape.
           </p>
         </div>
       </section>

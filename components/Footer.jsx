@@ -17,11 +17,11 @@ export default function Footer() {
           {/* Brand Info */}
           <div className="max-w-md space-y-3">
             <div className="cursor-pointer" onClick={() => navigate('/')}>
-              <h2 className="text-xl sm:text-2xl font-masthead font-black tracking-wider text-white uppercase">
-                AUSTIN BLACK BUSINESS
+              <h2 className="text-xl sm:text-2xl font-masthead uppercase font-black tracking-wider text-white">
+                AUSTIN BLACK BUSINESS Journal
               </h2>
-              <span className="text-[11px] tracking-[0.2em] text-[#FF4D4D] uppercase font-bold block mt-0.5">
-                Journal & Community News Magazine
+              <span className="text-[11px] tracking-[0.2em] text-[#FF4D4D] font-bold block mt-0.5">
+                Community News magazine
               </span>
             </div>
             <p className="text-xs text-[#999] leading-relaxed">

@@ -3,11 +3,13 @@
 import React, { useState } from 'react';
 import { useRouter, usePathname, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import { FiSearch, FiMenu, FiX } from 'react-icons/fi';
+import { FiSearch, FiMenu, FiX, FiChevronDown } from 'react-icons/fi';
 import { useSearch } from './SearchContext.jsx';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileLifestyleOpen, setMobileLifestyleOpen] = useState(false);
+  
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -36,6 +38,18 @@ export default function Header() {
     { label: 'Healthcare', path: '/blog?category=Healthcare' },
     { label: 'Legal', path: '/blog?category=Legal' },
     { label: 'Community', path: '/blog?category=Community' },
+    { 
+      label: 'Lifestyle', 
+      path: '#',
+      hasDropdown: true,
+      subCategories: [
+        { label: 'Health & Wellness', path: '/blog?category=Health+%26+Wellness' },
+        { label: 'Food & Wine', path: '/blog?category=Food+%26+Wine' },
+        { label: 'Travel', path: '/blog?category=Travel' }
+      ]
+    },
+    { label: 'Journals', path: 'https://issuu.com/amcpublishing.net?ps=24' },
+    { label: 'Photos', path: 'https://austinblackbusiness.smugmug.com/' },
     { label: 'About', path: '/about' },
     { label: 'Contact', path: '/contact' }
   ];
@@ -80,13 +94,13 @@ export default function Header() {
             className="text-center cursor-pointer flex-1 px-2"
             onClick={() => navigate('/')}
           >
-            <h1 className="text-2xl sm:text-4xl md:text-5xl font-black font-masthead tracking-tight text-[#171717] uppercase hover:text-[#8B0000] transition-colors">
-              AUSTIN BLACK BUSINESS
+            <h1 className="text-2xl sm:text-4xl md:text-4xl font-black font-masthead tracking-tight text-[#171717] hover:text-[#8B0000] transition-colors">
+              AUSTIN BLACK BUSINESS Journal
             </h1>
             <div className="flex items-center justify-center gap-3 mt-1.5">
               <span className="h-[1px] w-8 sm:w-16 bg-[#8B0000] hidden xs:block"></span>
-              <p className="text-xs sm:text-sm font-serif font-bold text-[#8B0000] tracking-[0.25em] uppercase">
-                Journal & Community News Magazine
+              <p className="text-xs sm:text-sm font-serif font-bold text-[#8B0000] tracking-[0.25em]">
+                Community News magazine
               </p>
               <span className="h-[1px] w-8 sm:w-16 bg-[#8B0000] hidden xs:block"></span>
             </div>
@@ -124,7 +138,8 @@ export default function Header() {
         className="w-full bg-[#8B0000] text-white shadow-xs border-y border-[#730000]"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
-          <ul className="flex items-center justify-center space-x-1 sm:space-x-3 text-xs font-medium overflow-x-auto no-scrollbar py-2">
+          {/* Added md:overflow-visible here so the dropdown won't get cut off */}
+          <ul className="flex items-center justify-center space-x-1 sm:space-x-3 text-xs font-medium overflow-x-auto md:overflow-visible no-scrollbar py-2">
             {navCategories.map((item) => {
               const isActive =
                 item.path === '/'
@@ -132,6 +147,58 @@ export default function Header() {
                   : currentPath.startsWith(item.path);
 
               const isDirectory = item.path === '/directory';
+
+              if (item.hasDropdown) {
+                return (
+                  <li key={item.label} className="shrink-0 relative group">
+                    <div className="flex items-center">
+                      <button
+                        onClick={() => navigate(item.path)}
+                        className={`px-3 py-1.5 rounded-l-xs transition-all cursor-pointer text-xs uppercase tracking-wider font-semibold ${
+                          isActive
+                            ? 'bg-[#5C0000] text-white shadow-inner font-bold border-b-2 border-white'
+                            : 'text-white/90 hover:text-white hover:bg-[#730000]'
+                        }`}
+                      >
+                        {item.label}
+                      </button>
+                      <button
+                        onClick={() => navigate(item.path)}
+                        className={`px-1.5 py-2.5 rounded-r-xs transition-all cursor-pointer text-xs ${
+                          isActive
+                            ? 'bg-[#5C0000] text-white shadow-inner border-b-2 border-white'
+                            : 'text-white/90 hover:text-white hover:bg-[#730000]'
+                        }`}
+                        aria-label="Lifestyle Submenu"
+                      >
+                        <FiChevronDown className="transition-transform duration-200 group-hover:rotate-180" />
+                      </button>
+                    </div>
+
+                    {/* Dropdown Menu (Shown on Hover via Tailwind 'group-hover') */}
+                    <div className="absolute left-0 top-full pt-1 w-48 hidden group-hover:block z-50">
+                      <div className="bg-white border border-[#E5E2DC] shadow-lg rounded-xs py-1.5">
+                        {item.subCategories.map((sub) => {
+                          const isSubActive = currentPath.startsWith(sub.path);
+                          return (
+                            <button
+                              key={sub.label}
+                              onClick={() => navigate(sub.path)}
+                              className={`block cursor-pointer w-full text-left px-4 py-2 text-xs font-medium uppercase tracking-wider transition-colors ${
+                                isSubActive
+                                  ? 'bg-[#FFF5F5] text-[#8B0000] font-bold'
+                                  : 'text-[#171717] hover:bg-[#8B0000] hover:text-[#F8F7F4]'
+                              }`}
+                            >
+                              {sub.label}
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  </li>
+                );
+              }
 
               return (
                 <li key={item.label} className="shrink-0">
@@ -165,6 +232,59 @@ export default function Header() {
                 item.path === '/'
                   ? currentPath === '/'
                   : currentPath.startsWith(item.path);
+
+              if (item.hasDropdown) {
+                return (
+                  <div key={item.label} className="space-y-1">
+                    <div className="flex items-center justify-between w-full">
+                      <button
+                        onClick={() => {
+                          navigate(item.path);
+                          setMobileMenuOpen(false);
+                        }}
+                        className={`flex-1 text-left py-2.5 px-3.5 text-sm font-semibold rounded-xs transition-colors ${
+                          isActive
+                            ? 'bg-[#8B0000] text-white'
+                            : 'text-[#171717] hover:bg-[#FFF5F5] hover:text-[#8B0000]'
+                        }`}
+                      >
+                        {item.label}
+                      </button>
+                      <button
+                        onClick={() => setMobileLifestyleOpen(!mobileLifestyleOpen)}
+                        className="p-2.5 text-[#171717] hover:text-[#8B0000]"
+                      >
+                        <FiChevronDown className={`transition-transform duration-200 ${mobileLifestyleOpen ? 'rotate-180' : ''}`} />
+                      </button>
+                    </div>
+
+                    {mobileLifestyleOpen && (
+                      <div className="pl-4 space-y-1 border-l-2 border-[#8B0000] ml-2 my-1">
+                        {item.subCategories.map((sub) => {
+                          const isSubActive = currentPath.startsWith(sub.path);
+                          return (
+                            <button
+                              key={sub.label}
+                              onClick={() => {
+                                navigate(sub.path);
+                                setMobileMenuOpen(false);
+                              }}
+                              className={`block w-full cursor-pointer text-left py-2 px-3 text-xs font-medium uppercase tracking-wider rounded-xs transition-colors ${
+                                isSubActive
+                                  ? 'bg-[#8B0000] text-white'
+                                  : 'text-[#555] cursor-pointer hover:bg-[#FFF5F5] hover:text-[#8B0000]'
+                              }`}
+                            >
+                              {sub.label}
+                            </button>
+                          );
+                        })}
+                      </div>
+                    )}
+                  </div>
+                );
+              }
+
               return (
                 <button
                   key={item.label}

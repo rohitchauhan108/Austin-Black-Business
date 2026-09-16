@@ -6,10 +6,10 @@ import Footer from '../components/Footer.jsx';
 import SearchModal from '../components/SearchModal.jsx';
 
 export const metadata = {
-  title: 'Austin Black Business Journal & Community News Magazine',
+  title: 'Austin Black Business Journal & Community News magazine',
   description: "The premier digital magazine celebrating African American excellence, Black-owned businesses, healthcare pioneers, legal champions, and tech innovators across Austin and Central Texas.",
   openGraph: {
-    title: 'Austin Black Business Journal & Community News Magazine',
+    title: 'Austin Black Business Journal & Community News magazine',
     description: "The premier digital magazine celebrating African American excellence, Black-owned businesses, healthcare pioneers, legal champions, and tech innovators across Austin and Central Texas.",
     type: 'website',
   },
