@@ -347,18 +347,37 @@ export default function ArticleView({ slug }) {
             </p>
           )}
 
-          {/* Secondary Photo Breakout */}
-          <div className="my-8 border border-[#E5E2DC] bg-white rounded-xs overflow-hidden">
-            <img
-              src={article.imageUrl}
-              alt={article.title}
-              referrerPolicy="no-referrer"
-              className="w-full h-72 sm:h-96 object-cover filter contrast-[1.03]"
-            />
-            <p className="p-3 text-xs text-[#6B6B6B] font-serif italic text-center bg-[#F8F7F4] border-t border-[#E5E2DC]">
-              Sensory observation and environmental context play an essential role in contemporary discernment.
-            </p>
-          </div>
+          {/* Secondary Photo Breakout or Editorial Gallery */}
+          {article.imageGallery?.length ? (
+            <div className="my-8 border border-[#E5E2DC] bg-white rounded-xs overflow-hidden p-3 sm:p-4">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                {article.imageGallery.map((imageUrl, index) => (
+                  <img
+                    key={imageUrl}
+                    src={imageUrl}
+                    alt={`${article.title} gallery image ${index + 1}`}
+                    referrerPolicy="no-referrer"
+                    className="w-full aspect-[4/3] object-cover"
+                  />
+                ))}
+              </div>
+              <p className="pt-3 text-xs text-[#6B6B6B] font-serif italic text-center">
+                Additional images from the life and legacy of {article.title.split(':')[0]}.
+              </p>
+            </div>
+          ) : (
+            <div className="my-8 border border-[#E5E2DC] bg-white rounded-xs overflow-hidden">
+              <img
+                src={article.imageUrl}
+                alt={article.title}
+                referrerPolicy="no-referrer"
+                className="w-full h-72 sm:h-96 object-cover filter contrast-[1.03]"
+              />
+              <p className="p-3 text-xs text-[#6B6B6B] font-serif italic text-center bg-[#F8F7F4] border-t border-[#E5E2DC]">
+                Sensory observation and environmental context play an essential role in contemporary discernment.
+              </p>
+            </div>
+          )}
 
           {/* Paragraph 4 & 5 */}
           {article.paragraphs.slice(3).map((para, i) => (

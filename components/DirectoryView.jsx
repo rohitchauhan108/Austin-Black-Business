@@ -173,10 +173,12 @@ export default function DirectoryView() {
                     <FiMapPin className="text-[#8B0000] mt-0.5 shrink-0 text-xs" />
                     <span className="text-xs text-[#333]">{biz.address}</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <FiPhone className="text-[#8B0000] shrink-0 text-xs" />
-                    <span className="text-xs font-mono text-[#333]">{biz.phone}</span>
-                  </div>
+                  {biz.phone ? (
+                    <div className="flex items-center gap-2">
+                      <FiPhone className="text-[#8B0000] shrink-0 text-xs" />
+                      <span className="text-xs font-mono text-[#333]">{biz.phone}</span>
+                    </div>
+                  ) : null}
                 </div>
               </div>
             </div>
@@ -193,12 +195,21 @@ export default function DirectoryView() {
                   </span>
                 ))}
               </div>
-              <a
-                href={`tel:${biz.phone.replace(/[^0-9]/g, '')}`}
-                className="text-xs font-bold text-[#8B0000] hover:underline flex items-center gap-1"
-              >
-                Connect <FiExternalLink className="text-[10px]" />
-              </a>
+              {biz.articleUrl ? (
+                <button
+                  onClick={() => navigate(biz.articleUrl)}
+                  className="text-xs font-bold text-[#8B0000] hover:underline flex items-center gap-1 cursor-pointer"
+                >
+                  Read article <FiExternalLink className="text-[10px]" />
+                </button>
+              ) : (
+                <a
+                  href={`tel:${biz.phone.replace(/[^0-9]/g, '')}`}
+                  className="text-xs font-bold text-[#8B0000] hover:underline flex items-center gap-1"
+                >
+                  Connect <FiExternalLink className="text-[10px]" />
+                </a>
+              )}
             </div>
           </div>
         ))}

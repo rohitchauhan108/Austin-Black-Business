@@ -42,6 +42,12 @@ export default function BlogPage({
   const [currentPage, setCurrentPage] = useState(1);
   const articlesPerPage = 9;
 
+  useEffect(() => {
+    setSelectedCategory(searchParams.get('category') || initialCategory);
+    setSearchQuery(searchParams.get('search') || initialSearch);
+    setCurrentPage(1);
+  }, [searchParams, initialCategory, initialSearch]);
+
   // Filter & Sort
   const filteredArticles = useMemo(() => {
     let list = [...ARTICLES];

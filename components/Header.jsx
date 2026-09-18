@@ -95,7 +95,7 @@ export default function Header() {
             onClick={() => navigate('/')}
           >
             <h1 className="text-2xl sm:text-4xl md:text-4xl font-black font-masthead tracking-tight text-[#171717] hover:text-[#8B0000] transition-colors">
-              AUSTIN BLACK BUSINESS Journal
+              AUSTIN BLACK BUSINESS JOURNAL
             </h1>
             <div className="flex items-center justify-center gap-3 mt-1.5">
               <span className="h-[1px] w-8 sm:w-16 bg-[#8B0000] hidden xs:block"></span>
