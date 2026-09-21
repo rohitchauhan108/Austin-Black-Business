@@ -403,15 +403,15 @@ export default function CategorySections({ navigate, savedSlugs, onToggleSave })
                 Jurisprudence & Governance
               </span>
               <h2 className="text-xl sm:text-2xl font-serif font-bold text-[#171717]">
-                Legal Counsel & Civil Leadership
+                Finance Counsel & Civil Leadership
               </h2>
             </div>
           </div>
           <button
-            onClick={() => navigate('/blog?category=Legal')}
+            onClick={() => navigate('/blog?category=Finance')}
             className="text-xs font-bold text-[#171717] hover:text-[#8B0000] flex items-center gap-1 uppercase tracking-wider cursor-pointer"
           >
-            All Legal <FiArrowRight />
+            All Finance <FiArrowRight />
           </button>
         </div>
 

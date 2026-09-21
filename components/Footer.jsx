@@ -39,7 +39,7 @@ export default function Footer() {
                 Sections
               </h4>
               <ul className="space-y-2 text-[#A3A3A3]">
-                {['Business', 'Technology', 'Healthcare', 'Legal', 'Community'].map((cat) => (
+                {['Business', 'Technology', 'Finance', 'Community'].map((cat) => (
                   <li key={cat}>
                     <button
                       onClick={() => navigate(`/blog?category=${cat}`)}

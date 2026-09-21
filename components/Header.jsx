@@ -35,8 +35,8 @@ export default function Header() {
     { label: 'Home', path: '/' },
     { label: 'Business', path: '/blog?category=Business' },
     { label: 'Technology', path: '/blog?category=Technology' },
-    { label: 'Healthcare', path: '/blog?category=Healthcare' },
-    { label: 'Legal', path: '/blog?category=Legal' },
+    // { label: 'Healthcare', path: '/blog?category=Healthcare' },
+    { label: 'Finance', path: '/blog?category=Finance' },
     { label: 'Community', path: '/blog?category=Community' },
     { 
       label: 'Lifestyle', 

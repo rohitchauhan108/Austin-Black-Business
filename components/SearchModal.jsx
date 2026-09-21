@@ -153,7 +153,7 @@ export default function SearchModal() {
               <FiTag /> Explore Categories
             </div>
             <div className="flex flex-wrap gap-1.5">
-              {['Business', 'Technology', 'Healthcare', 'Legal', 'Leadership', 'Community'].map((cat) => (
+              {['Business', 'Technology', 'Finance', 'Leadership', 'Community'].map((cat) => (
                 <button
                   key={cat}
                   onClick={() => {

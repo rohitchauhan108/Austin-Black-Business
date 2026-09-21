@@ -14,7 +14,7 @@ export const DIRECTORY_CATEGORIES = [
   'All',
   'Business',
   'Dining & Culinary',
-  'Professional & Legal',
+  'Professional & Finance',
   'Health & Wellness',
   'Technology & Creative',
   'Real Estate & Construction'

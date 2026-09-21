@@ -31,9 +31,9 @@ export default function HomePage() {
 
   const quickThemes = [
     { label: 'Silicon Hills Tech', query: 'Technology' },
-    { label: 'Healthcare Pioneers', query: 'Healthcare' },
+    // { label: 'Healthcare Pioneers', query: 'Healthcare' },
     { label: 'Capital & Investment', query: 'Business' },
-    { label: 'Legal Counsel', query: 'Legal' },
+    { label: 'Finance Counsel', query: 'Finance' },
     { label: 'East Austin Heritage', query: 'Community' }
   ];
 

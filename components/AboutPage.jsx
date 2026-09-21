@@ -43,8 +43,8 @@ export default function AboutPage() {
     },
     {
       name: 'Darius Thorne, Esq.',
-      title: 'Legal Affairs & Civic Policy Analyst',
-      organization: 'Central Texas Legal Institute',
+      title: 'Finance Affairs & Civic Policy Analyst',
+      organization: 'Central Texas Finance Institute',
       bio: 'Practicing civil rights attorney and corporate advisor examining regulatory developments, judicial appointments, and community wealth preservation across Travis and Williamson counties.',
       avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80'
     }
