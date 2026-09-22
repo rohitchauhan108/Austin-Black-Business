@@ -34,6 +34,15 @@ export default function Header() {
   const navCategories = [
     { label: 'Home', path: '/' },
     { label: 'Business', path: '/blog?category=Business' },
+    { 
+      label: 'Business', 
+      path: '#',
+      hasDropdown: true,
+      subCategories: [
+        { label: 'Business Directory', path: '/blog?category=Business-Directory' },
+        { label: 'Career', path: '/blog?category=Career' },
+      ]
+    },
     { label: 'Technology', path: '/blog?category=Technology' },
     // { label: 'Healthcare', path: '/blog?category=Healthcare' },
     { label: 'Finance', path: '/blog?category=Finance' },
@@ -43,8 +52,8 @@ export default function Header() {
       path: '#',
       hasDropdown: true,
       subCategories: [
-        { label: 'Health & Wellness', path: '/blog?category=Health+%26+Wellness' },
-        { label: 'Food & Wine', path: '/blog?category=Food+%26+Wine' },
+        { label: 'Health & Wellness', path: '/blog?category=Health&Wellness' },
+        { label: 'Food & Wine', path: '/blog?category=Food&Wine' },
         { label: 'Travel', path: '/blog?category=Travel' }
       ]
     },
