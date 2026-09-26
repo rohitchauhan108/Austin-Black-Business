@@ -33,7 +33,6 @@ export default function Header() {
 
   const navCategories = [
     { label: 'Home', path: '/' },
-    { label: 'Business', path: '/blog?category=Business' },
     { 
       label: 'Business', 
       path: '#',
